@@ -10,32 +10,30 @@ int	is_lowcase(char ch) {
 }
 
 std::string process(char *input) {
-	int			i;
-	int			j;
-	std::string ret;
+	size_t			j;
+	std::string	ret;
 
 	j = 0;
-	ret = "";
-	while (input[j])
+	ret = std::string(input);
+	while (j < ret.length())
 	{
-		if (is_lowcase(input[j])) {
-			input[j] -= 'a' - 'A';
+		if (is_lowcase(ret.at(j))) {
+			ret[j] = ret[j] - ('a' - 'A');
 		}
 		j++;
-	}
-	ret.append(input);
+	} 
 	return (ret);
 }
 
 int main (int argc, char **argv) {
+	std::string	input_message;
 	std::string output_message;
 
-	std::cout << output_message.max_size();
 	if (argc > 2) {
 		std::cout << "error: too much arguments" << std::endl;
 		return (1);
 	}
-	output_message = "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
+	output_message = std::string("* LOUD AND UNBEARABLE FEEDBACK NOISE *");
 	if (2 == argc) {
 		output_message = process(argv[1]);
 	}
