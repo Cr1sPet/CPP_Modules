@@ -1,6 +1,9 @@
-NAME	=	megaphone
+NAME	=	phone_book
 
-SRCS		=	megaphone.cpp
+SRCS		=	main.cpp\
+				PhoneBook.cpp\
+				Contact.cpp\
+				
 
 OBJ			=	$(SRCS:.cpp=.o)
 
@@ -8,7 +11,7 @@ CC			=	c++
 
 RM			=	rm -rf
 
-# FLAGS		=	 -Wall -Wextra -Werror 
+FLAGS		=	 -Wall -Wextra -Werror 
 
 VERSION		=	-std=c++98
 
@@ -18,10 +21,10 @@ DEBAG		=	-g
 
 all			:	$(NAME)
 
-$(NAME)		:	$(OBJ) 
+$(NAME)		:	$(OBJ)  ./PhoneBook.hpp ./Contact.hpp
 						$(CC) $(VERSION) $(FLAGS) $(OBJ) -o $(NAME) 
 %.o			:	%.cpp $(HEADER)
-								$(CC) $(VERSION) $(FLAGS) $(DEBAG) -c $< -o $@
+								$(CC) $(VERSION) -I$(./PhoneBook.hpp) $(FLAGS) $(DEBAG) -c $< -o $@
 
 clean		:
 				$(RM) $(OBJ)
