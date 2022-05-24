@@ -2,8 +2,9 @@
 #include <string>
 #include <iomanip>
 
-void PhoneBook::print() {
-	std::cout << "hello from PhoneBook realization\n";
+PhoneBook::PhoneBook() {
+	i = 0;
+	ok = false;
 }
 
 void PhoneBook::printFormatted(std::string output) {
@@ -14,22 +15,34 @@ void PhoneBook::printFormatted(std::string output) {
 	}
 }
 
-void PhoneBook::printContacts() {
+bool PhoneBook::printContacts() {
 	int length;
 	if (ok) {
 		length = 8;
 	} else {
 		length = i;
 	}
+	std::cout << std::endl;
+	if (0 == length) {
+		std::cout << "database is empty!" << std::endl;
+		return false;
+	}
+	std::cout << "|" << std::setw(10) << "index" <<
+	"|" << std::setw(10) << "first name"
+	<< "|" << std::setw(10) << "last name"
+	<< "|" << std::setw(10) << "nickname" << "|" << std::endl;
 	for (int j = 0; j < length; j++) {
-		printFormatted();
+		std::cout << "|";
+		std::cout << std::setw(10) << j << "|";
 		printFormatted(contacts[j].getFirstName());
 		std::cout << "|";
 		printFormatted(contacts[j].getLastName());
 		std::cout << "|";
 		printFormatted(contacts[j].getNickName());
-		std::cout << std::endl;
+		std::cout << "|";
+		std::cout << std::endl << std::endl;
 	}
+	return true;
 }
 
 void PhoneBook::addContact(Contact contact) {
@@ -38,4 +51,13 @@ void PhoneBook::addContact(Contact contact) {
 		ok = true;
 	}
 	i = (++i % 8);
+}
+
+void PhoneBook::searchContact(int ind) {
+	
+	if (ind < 0 || ind > i) {
+		std::cout << "incorrect index" << std::endl;
+	} else {
+		contacts[ind].printAllFields();
+	}
 }

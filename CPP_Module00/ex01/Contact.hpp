@@ -27,6 +27,7 @@ void setNickName(std::string);
 void setPhoneNumber(std::string);
 void setDarkestSecret(std::string);
 
+void printAllFields();
 
 };
 

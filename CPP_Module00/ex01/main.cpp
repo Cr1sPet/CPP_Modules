@@ -1,23 +1,58 @@
 #include "PhoneBook.hpp"
 #include <iomanip>
 
+Contact readContact() {
+	Contact contact;
+	std::string input;
+
+	std::cout << std::endl << "enter first name : \n";
+	std::cin >> input;
+	contact.setFirstName(input);
+	std::cout << "enter last name : \n";
+	std::cin >> input;
+	contact.setLastName(input);
+	std::cout << "enter nickname : \n";
+	std::cin >> input;
+	contact.setNickName(input);
+	std::cout << "enter phone number : \n";
+	std::cin >> input;
+	contact.setPhoneNumber(input);
+	std::cout << "enter darkest secret : \n";
+	std::cin >> input;
+	contact.setDarkestSecret(input);
+	return (contact);
+}
+
+int readInt() {
+	int a;
+	if (!(std::cin >> a)) {
+		std::cout << "incorrect input" << std::endl;
+		return(1);
+	}
+	return (a);
+}
+
 int main(void) {
 	PhoneBook	pb;
 	Contact		contact;
+	std::string input;
 
-	contact.setFirstName("Andrey23s");
-	contact.setLastName("Kirillov");
-	contact.setDarkestSecret("By");
-	contact.setNickName("Pol");
-	contact.setPhoneNumber("Mir");
-	pb.addContact(contact);
-	contact.setFirstName("Ser456789hj");
-	contact.setLastName("Pov");
-	contact.setDarkestSecret("MAC");
-	contact.setNickName("Kill");
-	contact.setPhoneNumber("888");
-	pb.addContact(contact);
-	pb.printContacts();
+	while(true) {
+		std::cout << "enter command <ADD> / <SEARCH> / <EXIT> : \n";
+		std::cin >> input;
+		if (0 == input.compare("ADD")) {
+			pb.addContact(readContact());
+			std::cout << std::endl << "entered contact successfully added!" << std::endl;
+		} else if (0 == input.compare("EXIT")) {
+			std::cout << std::cout << "exit" << std::endl;
+			return (1);
+		} else if (0 == input.compare("SEARCH")) {
 
+			if (pb.printContacts()) {
+				std::cout << "enter index of fild to get info:" << std::endl;
+				pb.searchContact(readInt());
+			}
+		}
+	}
 	return (0);
 }

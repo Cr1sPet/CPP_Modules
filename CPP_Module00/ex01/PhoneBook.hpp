@@ -16,14 +16,10 @@ class PhoneBook {
 	Contact contacts[8];
 
 	public:
-	PhoneBook() {
-		i = 0;
-		ok = false;
-	}
-	void print();
+	PhoneBook();
 	void addContact(Contact);
-	void printContacts();
-	void searchContact();
+	bool printContacts();
+	void searchContact(int);
 };
 
 #endif
