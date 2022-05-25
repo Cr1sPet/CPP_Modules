@@ -42,9 +42,9 @@ int main(void) {
 		std::cin >> input;
 		if (0 == input.compare("ADD")) {
 			pb.addContact(readContact());
-			std::cout << std::endl << "entered contact successfully added!" << std::endl;
+			std::cout << "entered contact successfully added!" << std::endl << std::endl;
 		} else if (0 == input.compare("EXIT")) {
-			std::cout << std::cout << "exit" << std::endl;
+			std::cout << std::endl << "exit" << std::endl;
 			return (1);
 		} else if (0 == input.compare("SEARCH")) {
 
@@ -52,6 +52,8 @@ int main(void) {
 				std::cout << "enter index of fild to get info:" << std::endl;
 				pb.searchContact(readInt());
 			}
+		} else {
+			std::cout << "unrecognized input, try again!\n\n";
 		}
 	}
 	return (0);

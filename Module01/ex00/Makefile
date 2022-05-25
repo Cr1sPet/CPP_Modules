@@ -1,7 +1,9 @@
 NAME	=	phone_book
 
-SRCS		=	tests.cpp\
-				Account.cpp\
+SRCS		=	main.cpp\
+				newZombie.cpp\
+				randomChump.cpp\
+				Zombie.cpp\
 				
 
 OBJ			=	$(SRCS:.cpp=.o)
@@ -20,7 +22,7 @@ DEBAG		=	-g
 
 all			:	$(NAME)
 
-$(NAME)		:	$(OBJ)  ./Account.hpp
+$(NAME)		:	$(OBJ)  ./Zombie.hpp
 						$(CC) $(VERSION) $(FLAGS) $(OBJ) -o $(NAME) 
 %.o			:	%.cpp $(HEADER)
 								$(CC) $(VERSION) -I$(./PhoneBook.hpp) $(FLAGS) $(DEBAG) -c $< -o $@
