@@ -16,3 +16,5 @@ Zombie::~Zombie() {
 void Zombie::setName(std::string name) {
     this->name = name;
 }
+
+Zombie::Zombie( void ) {} ;

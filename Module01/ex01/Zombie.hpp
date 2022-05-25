@@ -13,7 +13,7 @@ public:
 
     void announce( void );
 
-    Zombie();
+    Zombie ( void );
 
     Zombie(std::string name) {
         this->name = name;
