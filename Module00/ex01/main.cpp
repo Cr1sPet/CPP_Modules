@@ -5,7 +5,7 @@ Contact readContact() {
 	Contact contact;
 	std::string input;
 
-	std::cout << std::endl << "enter first name : \n";
+	std::cout << "enter first name : \n";
 	std::cin >> input;
 	contact.setFirstName(input);
 	std::cout << "enter last name : \n";
@@ -42,18 +42,18 @@ int main(void) {
 		std::cin >> input;
 		if (0 == input.compare("ADD")) {
 			pb.addContact(readContact());
-			std::cout << "entered contact successfully added!" << std::endl << std::endl;
+			std::cout << "entered contact successfully added!" << std::endl;
 		} else if (0 == input.compare("EXIT")) {
-			std::cout << std::endl << "exit" << std::endl;
+			std::cout << "exit" << std::endl;
 			return (1);
 		} else if (0 == input.compare("SEARCH")) {
 
 			if (pb.printContacts()) {
-				std::cout << "enter index of fild to get info:" << std::endl;
+				std::cout << "enter index of fild to get info:\n";
 				pb.searchContact(readInt());
 			}
 		} else {
-			std::cout << "unrecognized input, try again!\n\n";
+			std::cout << "unrecognized input, try again!\n";
 		}
 	}
 	return (0);

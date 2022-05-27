@@ -47,11 +47,9 @@ void Contact::setLastName(std::string lastName) {
 }
 
 void Contact::printAllFields() {
-	std::cout << std::endl;
 	std::cout << "first name : " << getFirstName() << std::endl;
 	std::cout << "last name : "<< getLastName() << std::endl;
 	std::cout << "nick name : "<< getNickName() << std::endl;
 	std::cout << "phone number : "<< getPhoneNumber() << std::endl;
 	std::cout << "darkest secret : "<< getDarkestSecret() << std::endl;
-	std::cout << std::endl;
 }

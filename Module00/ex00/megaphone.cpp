@@ -29,14 +29,14 @@ int main (int argc, char **argv) {
 	std::string	input_message;
 	std::string output_message;
 
-	if (argc > 2) {
-		std::cout << "error: too much arguments" << std::endl;
-		return (1);
-	}
 	output_message = std::string("* LOUD AND UNBEARABLE FEEDBACK NOISE *");
-	if (2 == argc) {
-		output_message = process(argv[1]);
+	if (argc >= 2) {
+		for (int i = 1; i < argc; i++) {
+			output_message = process(argv[i]);
+			std::cout << output_message;
+		}
+	} else {
+		std::cout << output_message;
 	}
-	std::cout << output_message;
 	return (0);
 }

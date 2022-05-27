@@ -22,7 +22,6 @@ bool PhoneBook::printContacts() {
 	} else {
 		length = i;
 	}
-	std::cout << std::endl;
 	if (0 == length) {
 		std::cout << "database is empty!" << std::endl;
 		return false;
@@ -40,7 +39,7 @@ bool PhoneBook::printContacts() {
 		std::cout << "|";
 		printFormatted(contacts[j].getNickName());
 		std::cout << "|";
-		std::cout << std::endl << std::endl;
+		std::cout << std::endl;
 	}
 	return true;
 }
