@@ -8,8 +8,8 @@
 			"type": "lldb",
 			"request": "launch",
 			"name": "Debug",
-			"program": "/Users/jchopped/CPP_introduction/CPP_Module00/ex00/megaphone",
-			"args": ["hel"],
+			"program": "/home/serj/projects/CPP_introduction/Module01/ex03/zombies",
+			"args": [""],
 			"cwd": "${workspaceFolder}"
 		}
 	]

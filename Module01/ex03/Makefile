@@ -1,8 +1,9 @@
 NAME	=	zombies
 
 SRCS		=	main.cpp\
-				zombieHorde.cpp\
-				Zombie.cpp\
+				HumanA.cpp\
+				HumanB.cpp\
+				Weapon.cpp\
 				
 
 OBJ			=	$(SRCS:.cpp=.o)
@@ -21,7 +22,7 @@ DEBAG		=	-g
 
 all			:	$(NAME)
 
-$(NAME)		:	$(OBJ)  ./Zombie.hpp
+$(NAME)		:	$(OBJ)  ./HumanA.hpp ./HumanB.hpp ./Weapon.hpp
 						$(CC) $(VERSION) $(FLAGS) $(OBJ) -o $(NAME) 
 %.o			:	%.cpp $(HEADER)
 								$(CC) $(VERSION) -I$(./PhoneBook.hpp) $(FLAGS) $(DEBAG) -c $< -o $@
