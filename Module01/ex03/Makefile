@@ -1,8 +1,7 @@
 NAME	=	zombies
 
 SRCS		=	main.cpp\
-				newZombie.cpp\
-				randomChump.cpp\
+				zombieHorde.cpp\
 				Zombie.cpp\
 				
 

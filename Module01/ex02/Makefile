@@ -1,9 +1,7 @@
-NAME	=	zombies
+NAME	=	brain
 
 SRCS		=	main.cpp\
-				newZombie.cpp\
-				randomChump.cpp\
-				Zombie.cpp\
+
 				
 
 OBJ			=	$(SRCS:.cpp=.o)
@@ -22,7 +20,7 @@ DEBAG		=	-g
 
 all			:	$(NAME)
 
-$(NAME)		:	$(OBJ)  ./Zombie.hpp
+$(NAME)		:	$(OBJ) 
 						$(CC) $(VERSION) $(FLAGS) $(OBJ) -o $(NAME) 
 %.o			:	%.cpp $(HEADER)
 								$(CC) $(VERSION) -I$(./PhoneBook.hpp) $(FLAGS) $(DEBAG) -c $< -o $@
