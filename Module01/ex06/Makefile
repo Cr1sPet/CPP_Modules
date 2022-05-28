@@ -1,9 +1,7 @@
-NAME	=	weapons
+NAME	=	harlFilter
 
 SRCS		=	main.cpp\
-				HumanA.cpp\
-				HumanB.cpp\
-				Weapon.cpp\
+				Harl.cpp\
 				
 
 OBJ			=	$(SRCS:.cpp=.o)
@@ -12,7 +10,7 @@ CC			=	c++
 
 RM			=	rm -rf
 
-FLAGS		=	 -Wall -Wextra -Werror 
+FLAGS		=	 -Wall -Wextra -Werror -Wpedantic
 
 VERSION		=	-std=c++98
 
@@ -22,7 +20,7 @@ DEBAG		=	-g
 
 all			:	$(NAME)
 
-$(NAME)		:	$(OBJ)  ./HumanA.hpp ./HumanB.hpp ./Weapon.hpp
+$(NAME)		:	$(OBJ)  ./Harl.hpp
 						$(CC) $(VERSION) $(FLAGS) $(OBJ) -o $(NAME) 
 %.o			:	%.cpp $(HEADER)
 								$(CC) $(VERSION) -I$(./PhoneBook.hpp) $(FLAGS) $(DEBAG) -c $< -o $@

@@ -1,9 +1,7 @@
-NAME	=	weapons
+NAME	=	harl
 
 SRCS		=	main.cpp\
-				HumanA.cpp\
-				HumanB.cpp\
-				Weapon.cpp\
+				Harl.cpp\
 				
 
 OBJ			=	$(SRCS:.cpp=.o)
@@ -22,7 +20,7 @@ DEBAG		=	-g
 
 all			:	$(NAME)
 
-$(NAME)		:	$(OBJ)  ./HumanA.hpp ./HumanB.hpp ./Weapon.hpp
+$(NAME)		:	$(OBJ)  ./Harl.hpp
 						$(CC) $(VERSION) $(FLAGS) $(OBJ) -o $(NAME) 
 %.o			:	%.cpp $(HEADER)
 								$(CC) $(VERSION) -I$(./PhoneBook.hpp) $(FLAGS) $(DEBAG) -c $< -o $@

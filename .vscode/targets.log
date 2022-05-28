@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Fri May 27 17:10:46 2022
+# Make data base, printed on Sat May 28 12:14:28 2022
 
 # Variables
 
@@ -85,7 +85,7 @@ _ = /snap/code/97/usr/share/code/code
 # environment
 MANAGERPID = 2176
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-159d794e-f9a1-4f0b-b06c-fb0c8be3115e.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-07ba357b-be3e-4bfd-9b06-a41fb1351677.sock
 # environment
 LC_NAME = ru_RU.UTF-8
 # environment
@@ -133,7 +133,7 @@ XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 15643
+GIO_LAUNCHED_DESKTOP_FILE_PID = 97731
 # automatic
 %F = $(notdir $%)
 # environment
@@ -229,6 +229,7 @@ VSCODE_IPC_HOOK = /run/user/1000/vscode-fa80ddbd-1.67.2-main.sock
 # environment
 BAMF_DESKTOP_FILE_HINT = /var/lib/snapd/desktop/applications/code_code.desktop
 # makefile
+ 
 MAKEFLAGS = pqrR
 # environment
 MFLAGS = -pqrR
@@ -281,12 +282,11 @@ GJS_DEBUG_OUTPUT = stderr
 # default
 .RECIPEPREFIX := 
 # environment
- 
 LC_ADDRESS = ru_RU.UTF-8
 # environment
 LANG = C
 # environment
-VSCODE_PID = 15688
+VSCODE_PID = 97778
 # variable set hash-table stats:
 # Load=137/1024=13%, Rehash=0, Collisions=24/159=15%
 
@@ -354,6 +354,6 @@ GNUmakefile:
 # strcache performance: lookups = 17 / hit rate = 17%
 # hash-table stats:
 # Load=14/8192=0%, Rehash=0, Collisions=1/17=6%
-# Finished Make data base on Fri May 27 17:10:46 2022
+# Finished Make data base on Sat May 28 12:14:28 2022
 
  
