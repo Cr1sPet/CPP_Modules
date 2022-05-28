@@ -2,16 +2,18 @@
 #include <fstream>
 #include <sstream>
 #include <cstdlib>
+ #include <sys/types.h>
+ #include <sys/stat.h>
+ #include <fcntl.h>
 
 
 std::string readFile(char *filePath) {
     std::ifstream file(filePath);
 
     if (!file.is_open()) {
-        std::cout << "Error\nfile didnt open" << std::endl;
+        std::cout << "Error\nfile didnt open1" << std::endl;
         exit(1);
     }
-
     std::stringstream sstr;
     while (file >> sstr.rdbuf());
     std::string input = sstr.str();
@@ -22,7 +24,7 @@ std::string readFile(char *filePath) {
 void process(std::string outFilePath, std::string input, char *_from, char *to) {
     std::ofstream file;
     file.open (outFilePath.c_str());
-    if (!file.is_open() || file.) {
+    if (!file.is_open()) {
         std::cout << "Error\nfile didnt open" << std::endl;
         exit(1);
     }
