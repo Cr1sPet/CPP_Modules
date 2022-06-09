@@ -20,7 +20,7 @@ public:
     Fixed (const Fixed & fixed);
     ~Fixed ();
     Fixed & operator = (const Fixed & fixed);
-    bool  operator > (const Fixed & fixed);
+    bool  operator> (const Fixed & fixed) const;
     bool  operator < (const Fixed & fixed);
     bool  operator >= (const Fixed & fixed);
     bool  operator <= (const Fixed & fixed);

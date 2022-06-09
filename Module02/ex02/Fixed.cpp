@@ -14,7 +14,7 @@ Fixed::Fixed( const float fixed ) {
 
 Fixed::Fixed() {
     // std::cout << "Default constructor called" << std::endl;
-    fixedPointNum = 0;
+    this->fixedPointNum = 0;
 }
 
 Fixed::Fixed (const Fixed & fixed) {
@@ -51,14 +51,14 @@ std::ostream &operator << ( std::ostream &out, Fixed const &fixed ) {
     return out;
 }
 
-bool Fixed::operator > ( Fixed const &fixed  ) {
+bool Fixed::operator >( const Fixed &fixed  ) const{
 
     std::cout << "HELLO" << std::endl;
-    std::cout << this->getRawBits() << std::endl;
-    std::cout << fixed.getRawBits() << std::endl;
+    std::cout << " THIS " << this->getRawBits() << std::endl;
+    std::cout <<  " THAT " << fixed.getRawBits() << std::endl;
 
-
-    return (this->getRawBits() > fixed.getRawBits());
+    std::cout << "HOP " << (this->toFloat() > fixed.toFloat()) << std::endl;
+    return (this->toFloat() > fixed.toFloat());
 }
 
 bool Fixed::operator < ( Fixed const &fixed  ) {
