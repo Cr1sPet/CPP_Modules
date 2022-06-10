@@ -57,23 +57,28 @@ bool Fixed::operator >( const Fixed &fixed  ) const{
     std::cout << " THIS " << this->getRawBits() << std::endl;
     std::cout <<  " THAT " << fixed.getRawBits() << std::endl;
 
-    std::cout << "HOP " << (this->toFloat() > fixed.toFloat()) << std::endl;
-    return (this->toFloat() > fixed.toFloat());
+    if (this->toFloat() > fixed.toFloat()) {
+        std::cout << "HOH" << std::endl;
+        return true;
+    } else {
+        std::cout << "HOH1" << std::endl;
+        return false;
+    }
 }
 
-bool Fixed::operator < ( Fixed const &fixed  ) {
-    return this->getRawBits() < fixed.getRawBits();
+bool Fixed::operator < ( const Fixed &fixed ) const{
+    return (fixedPointNum < fixed.fixedPointNum);
 }
 
-bool Fixed::operator >= ( Fixed const &fixed  ) {
+bool Fixed::operator >= ( Fixed const &fixed  ) const {
     return this->getRawBits() >= fixed.getRawBits();
 }
 
-bool Fixed::operator <= ( Fixed const &fixed  ) {
+bool Fixed::operator <= ( Fixed const &fixed  ) const {
     return this->getRawBits() <= fixed.getRawBits();
 }
 
-bool Fixed::operator == ( Fixed const &fixed  ) {
+bool Fixed::operator == ( Fixed const &fixed  ) const {
     return this->getRawBits() == fixed.getRawBits();
 }
 
@@ -144,7 +149,33 @@ Fixed Fixed::operator-- () {
     return val;
 }
 
-// std::ostream &operator << (std::ostream &out, Dog const &dog)  {
-//     out << " DOG NAME:  " << dog.getA() << std::endl;
-//     return out;
-// }
+Fixed &Fixed::max(Fixed &first, Fixed &second)
+{
+        if (first > second || first == second) {
+            return first;
+        }
+        return second;
+}
+
+const Fixed &Fixed::max(const Fixed &first, const Fixed &second) {
+        if (first > second || first == second) {
+            return first;
+        }
+        return second;
+}
+
+
+Fixed &Fixed::min(Fixed &first, Fixed &second)
+{
+        if (first < second) {
+            return first;
+        }
+        return second;
+}
+
+const Fixed &Fixed::min(const Fixed &first, const Fixed &second) {
+        if (first < second) {
+            return first;
+        }
+        return second;
+}

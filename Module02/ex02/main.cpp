@@ -3,12 +3,15 @@
 
 
 int main( void ) {
-    Fixed a (1);
+    Fixed a (91);
     Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
 
-    bool c = (a > b);
+    Fixed d (12);
+    
+    std::cout << Fixed::min( a, d ) << std::endl;
 
-    std::cout << c << std::cout;
+
+
 
     // std::cout << a << std::endl;
     // std::cout << ++a << std::endl;
@@ -16,6 +19,5 @@ int main( void ) {
     // std::cout << a++ << std::endl;
     // std::cout << a << std::endl;
     // std::cout << b << std::endl;
-    // std::cout << Fixed::max( a, b ) << std::endl;
     return 0;
 }

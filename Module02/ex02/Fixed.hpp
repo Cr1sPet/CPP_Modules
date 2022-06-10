@@ -20,11 +20,11 @@ public:
     Fixed (const Fixed & fixed);
     ~Fixed ();
     Fixed & operator = (const Fixed & fixed);
-    bool  operator> (const Fixed & fixed) const;
-    bool  operator < (const Fixed & fixed);
-    bool  operator >= (const Fixed & fixed);
-    bool  operator <= (const Fixed & fixed);
-    bool  operator == (const Fixed & fixed);
+    bool  operator > (const Fixed & fixed) const;
+    bool  operator < (const Fixed & fixed) const;
+    bool  operator >= (const Fixed & fixed) const;
+    bool  operator <= (const Fixed & fixed) const;
+    bool  operator == (const Fixed & fixed) const;
     bool  operator != (const Fixed & fixed);
 
     Fixed  operator + (const Fixed & fixed);
@@ -37,15 +37,11 @@ public:
     Fixed operator -- ();
     Fixed operator -- (int);
 
+    static Fixed & max(Fixed &first, Fixed &second);
+    static const Fixed & max(const Fixed &first, const Fixed &second);
+    static Fixed & min(Fixed &first, Fixed &second);
+    static const Fixed & min(const Fixed &first, const Fixed &second);
 
-    // static const Fixed &max(Fixed const &first, Fixed const &second)  {
-    //     // return (first > second) ? first : second;
-    //     if (first > second) {
-    //         return first;
-    //     } else {
-    //         return second;
-    //     }
-    // }
 
     int getRawBits( void ) const;
     void setRawBits( int const raw );
