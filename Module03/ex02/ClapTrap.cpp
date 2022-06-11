@@ -1,15 +1,50 @@
 #include "ClapTrap.hpp"
 #include <iostream>
 
-ClapTrap::ClapTrap( const std::string name ) {
-    std::cout << "Cobstructor called" << std::endl;
-    this->name = name;
-    hitPoints = 10;
-    energyPoints = 10;
-    attackDamage = 1;
+
+ClapTrap::ClapTrap() {
+    std::cout << "ClapTrap's non-arguments constructor called" << std::endl;
 }
 
- ClapTrap & ClapTrap::operator = (const ClapTrap &clapTrap) {
+void ClapTrap::setName(std::string name) {
+    this->name = name;
+}
+
+void ClapTrap::setHitPoints(int hitPoints) {
+    this->hitPoints = hitPoints;
+}
+
+int ClapTrap::getHitPoints() const {
+    return this->hitPoints;
+}
+
+void ClapTrap::setEnergyPoints(int energyPoints) {
+    this->energyPoints = energyPoints;
+}
+
+int ClapTrap::getEnergyPoints() const {
+    return energyPoints;
+}
+
+void ClapTrap::setAttackDamage(int attackDamage) {
+    this->attackDamage = attackDamage;
+}
+
+int ClapTrap::getAttackDamage() const {
+    return this->attackDamage;
+}
+
+
+
+ClapTrap::ClapTrap( const std::string name ) {
+    std::cout << "ClapTrap's constructor called" << std::endl;
+    this->setName(name);
+    this->setHitPoints(10);
+    this->setEnergyPoints(10);
+    this->setAttackDamage(10);
+}
+
+ClapTrap & ClapTrap::operator = (const ClapTrap &clapTrap) {
     if (this != &clapTrap) {
         this->name = clapTrap.getName();
     }
@@ -17,7 +52,7 @@ ClapTrap::ClapTrap( const std::string name ) {
 }
 
 ClapTrap::~ClapTrap() {
-    std::cout << "Destructor called" << std::endl;
+    std::cout << "ClapTrap's destructor called" << std::endl;
 }
 
 std::string ClapTrap::getName () const {
@@ -36,11 +71,11 @@ void ClapTrap::attack( const std::string & target) {
 }
 
 void ClapTrap::beRepaired(unsigned int amount) {
-    if (isActive()) {
+    if (energyPoints > 0) {
         hitPoints += amount;
         energyPoints--;
         std::cout << "ClapTrap " << name\
-                    << " is repared, health increased by "\
+                    << " is repaired, health increased by "\
                     << amount << " hit points"\
                     << std::endl;
     }
@@ -81,3 +116,10 @@ bool ClapTrap::isActive(unsigned int amount) {
     return true;
 }
 
+std::ostream &operator << ( std::ostream &out, ClapTrap const &clapTrap ) {
+
+    out << "Clap Trap name : " <<  clapTrap.getName()\
+        << "; current HP : " << clapTrap.getHitPoints()\
+        << "; current Energy : " << clapTrap.getEnergyPoints();
+    return out;
+}

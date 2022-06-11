@@ -3,7 +3,7 @@
 
 
 ClapTrap::ClapTrap() {
-    std::cout << "ClapTrap's non-arguments constructor called" << std::endl;
+    std::cout << "CallTrap's non-arguments constructor called" << std::endl;
 }
 
 void ClapTrap::setName(std::string name) {

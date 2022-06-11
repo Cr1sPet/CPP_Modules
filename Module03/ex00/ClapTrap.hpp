@@ -11,7 +11,8 @@ private:
     int hitPoints;
     int energyPoints;
     int attackDamage;
-
+    bool isActive();
+    bool isActive(unsigned int amount);
 
 
 public:
@@ -32,11 +33,11 @@ public:
     void setEnergyPoints( int );
     int getAttackDamage() const;
     void setAttackDamage( int );
+
     void attack( const std::string & );
-    void takeDamage( unsigned int );
-    void beRepaired( unsigned int );
-    bool isActive();
-    bool isActive( unsigned int );
+    void takeDamage(unsigned int);
+    void beRepaired(unsigned int);
+
 };
 
 std::ostream & operator << ( std::ostream& , const ClapTrap& );
