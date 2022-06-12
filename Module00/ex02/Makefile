@@ -2,7 +2,8 @@ NAME	=	accounts
 
 SRCS		=	tests.cpp\
 				Account.cpp\
-				
+
+HEADERS		=	Account.hpp
 
 OBJ			=	$(SRCS:.cpp=.o)
 
@@ -10,7 +11,7 @@ CC			=	c++
 
 RM			=	rm -rf
 
-FLAGS		=	 -Wall -Wextra -Werror 
+FLAGS		=	 -Wall -Wextra -Werror
 
 VERSION		=	-std=c++98
 
@@ -20,10 +21,10 @@ DEBAG		=	-g
 
 all			:	$(NAME)
 
-$(NAME)		:	$(OBJ)  ./Account.hpp
+$(NAME)		:	$(OBJ) $(HEADERS)
 						$(CC) $(VERSION) $(FLAGS) $(OBJ) -o $(NAME) 
-%.o			:	%.cpp $(HEADER)
-								$(CC) $(VERSION) -I$(./PhoneBook.hpp) $(FLAGS) $(DEBAG) -c $< -o $@
+%.o			:	%.cpp
+								$(CC) $(VERSION) $(FLAGS) $(DEBAG) -c $< -o $@
 
 clean		:
 				$(RM) $(OBJ)

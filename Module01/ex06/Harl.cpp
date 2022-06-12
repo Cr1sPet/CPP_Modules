@@ -1,9 +1,6 @@
-
 #include "Harl.hpp"
-#include <iostream>
-#include <string>
 
-
+const std::string	Harl::types[4] = {"debug", "info", "warning", "error"};
 
 
 void Harl::debug() {
@@ -29,11 +26,6 @@ void Harl::error() {
 int findIndex(std::string level) {
     std::string types [4];
 
-    types[0] = "debug";
-    types[1] = "info";
-    types[2] = "warning";
-    types[3] = "error";
-
     for (int i = 0; i < 4; i++) {
         if (0 == types[i].compare(level)) {
             return i;
@@ -56,7 +48,7 @@ void Harl::complain ( std::string level ) {
         std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
     } else {
         for (int i = filter; i < 4; i++) {
-        (this->*funs_arr[i])();
-    }
+            (this->*funs_arr[i])();
+        }
     }
 }

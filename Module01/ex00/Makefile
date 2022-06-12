@@ -4,7 +4,8 @@ SRCS		=	main.cpp\
 				newZombie.cpp\
 				randomChump.cpp\
 				Zombie.cpp\
-				
+
+HEADERS		=	Zombie.hpp
 
 OBJ			=	$(SRCS:.cpp=.o)
 
@@ -22,10 +23,10 @@ DEBAG		=	-g
 
 all			:	$(NAME)
 
-$(NAME)		:	$(OBJ)  ./Zombie.hpp
+$(NAME)		:	$(OBJ)
 						$(CC) $(VERSION) $(FLAGS) $(OBJ) -o $(NAME) 
-%.o			:	%.cpp $(HEADER)
-								$(CC) $(VERSION) -I$(./PhoneBook.hpp) $(FLAGS) $(DEBAG) -c $< -o $@
+%.o			:	%.cpp $(HEADERS)
+								$(CC) $(VERSION) $(FLAGS) $(DEBAG) -c $< -o $@
 
 clean		:
 				$(RM) $(OBJ)

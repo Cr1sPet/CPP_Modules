@@ -3,6 +3,7 @@ NAME	=	firstCanonical
 SRCS		=	main.cpp\
 				Fixed.cpp\
 				
+HEADER		=	./Fixed.hpp
 
 OBJ			=	$(SRCS:.cpp=.o)
 
@@ -20,10 +21,10 @@ DEBAG		=	-g
 
 all			:	$(NAME)
 
-$(NAME)		:	$(OBJ)  ./Fixed.hpp
+$(NAME)		:	$(OBJ)
 						$(CC) $(VERSION) $(FLAGS) $(OBJ) -o $(NAME) 
 %.o			:	%.cpp $(HEADER)
-								$(CC) $(VERSION) -I$(./PhoneBook.hpp) $(FLAGS) $(DEBAG) -c $< -o $@
+								$(CC) $(VERSION) $(FLAGS) $(DEBAG) -c $< -o $@
 
 clean		:
 				$(RM) $(OBJ)

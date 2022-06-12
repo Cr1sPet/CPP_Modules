@@ -13,11 +13,11 @@ private:
     void warning( void );
     void error( void );
 
+    static const std::string types [4];
 
 public:
 
     void complain ( std::string );
-
     
 };
 

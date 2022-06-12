@@ -1,7 +1,4 @@
-
 #include "Harl.hpp"
-#include <iostream>
-#include <string>
 
 const std::string	Harl::types[4] = {"debug", "info", "warning", "error"};
 
@@ -26,8 +23,6 @@ void Harl::error() {
 }
 
 void Harl::complain ( const std::string level ) {
-
-    std::cout << "LEVEL : " << level << std::endl;
 
       void		(Harl::*funcs_arr[4])(void) = {&Harl::debug,
                												&Harl::info,

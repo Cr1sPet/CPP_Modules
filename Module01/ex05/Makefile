@@ -3,6 +3,7 @@ NAME	=	harl
 SRCS		=	main.cpp\
 				Harl.cpp\
 				
+HEADER		=	Harl.hpp
 
 OBJ			=	$(SRCS:.cpp=.o)
 
@@ -23,7 +24,7 @@ all			:	$(NAME)
 $(NAME)		:	$(OBJ)  ./Harl.hpp
 						$(CC) $(VERSION) $(FLAGS) $(OBJ) -o $(NAME) 
 %.o			:	%.cpp $(HEADER)
-								$(CC) $(VERSION) -I$(./PhoneBook.hpp) $(FLAGS) $(DEBAG) -c $< -o $@
+								$(CC) $(VERSION) $(FLAGS) $(DEBAG) -c $< -o $@
 
 clean		:
 				$(RM) $(OBJ)

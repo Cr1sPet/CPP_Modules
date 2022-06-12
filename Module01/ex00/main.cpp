@@ -1,5 +1,4 @@
 #include "Zombie.hpp"
-#include "Functions.hpp"
 
 int main() {
 

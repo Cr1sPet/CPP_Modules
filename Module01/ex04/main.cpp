@@ -28,14 +28,12 @@ std::string readFile(char *filePath) {
     std::string input;
     while (file) {
         std::getline(file, input);
-        ret += input;
+        ret += input + '\n';
     }
     return ret;
 }
 
-void process(std::string outFilePath, std::string input, char *_from, char *to) {
-    bool ok = 0;
-    std::string from(_from);
+void process(std::string outFilePath, std::string input, std::string from, std::string to) {
     std::ofstream file;
     file.open (outFilePath.c_str());
     if (!file.is_open()) {
@@ -47,15 +45,11 @@ void process(std::string outFilePath, std::string input, char *_from, char *to) 
     while (true) {
         index = input.find(from);
         if (index != std::string::npos) {
-            ok = 1;
             input.erase(index, from.length());
             input.insert(index, to);
             file << input.substr(0, index + from.length());
             input = input.substr(index + from.length());
         } else {
-            if (0 == ok) {
-                std::cout << "file is empty";
-            }
             if (input.length()) {
                 file << input;
             }
@@ -71,10 +65,10 @@ int main(int argc, char **argv) {
         std::cout << "Error\nInvalid number of arguments." << std::endl;
         return 1;
     }
-    std::string input;
-    input = readFile(argv[1]);
-    std::string outFilePath(argv[1]);
-    outFilePath += ".replace";
-    process(outFilePath, input, argv[2], argv[3]);
+    std::string input_text = readFile(argv[1]);
+    std::string from = argv[2];
+    std::string to = argv[3];
+    std::string outFilePath = (std::string)argv[1] + ".replace";
+    process(outFilePath, input_text, from, to);
     return 0;
 }

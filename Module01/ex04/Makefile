@@ -1,8 +1,6 @@
-NAME	=	file_manip
+NAME	=	replace
 
 SRCS		=	main.cpp\
-			
-				
 
 OBJ			=	$(SRCS:.cpp=.o)
 
@@ -21,9 +19,9 @@ DEBAG		=	-g
 all			:	$(NAME)
 
 $(NAME)		:	$(OBJ)  
-						$(CC) $(VERSION) $(FLAGS) $(OBJ) -o $(NAME) 
-%.o			:	%.cpp $(HEADER)
-								$(CC) $(VERSION) -I$(./PhoneBook.hpp) $(FLAGS) $(DEBAG) -c $< -o $@
+						$(CC) $(VERSION) $(FLAGS) $(OBJ) -o $(NAME)
+%.o			:	%.cpp
+								$(CC) $(VERSION) $(FLAGS) $(DEBAG) -c $< -o $@
 
 clean		:
 				$(RM) $(OBJ)

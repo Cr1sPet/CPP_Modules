@@ -1,7 +1,7 @@
 #include "Zombie.hpp"
 
 int main () {
-    Zombie* zombies = zombieHorde(10, "pif");
+    Zombie* zombies = zombieHorde(10, "infected");
     for (int i = 0; i < 10; i++) {
         zombies[i].announce();
     }

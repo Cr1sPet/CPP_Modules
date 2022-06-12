@@ -4,7 +4,10 @@ SRCS		=	main.cpp\
 				ClapTrap.cpp\
 				ScavTrap.cpp\
 				FragTrap.cpp
-				
+
+HEADER		=	./ClapTrap.hpp\
+				./ScavTrap.hpp\
+				./FragTrap.hpp
 
 OBJ			=	$(SRCS:.cpp=.o)
 
@@ -23,10 +26,10 @@ DEBAG		=	-g
 
 all			:	$(NAME)
 
-$(NAME)		:	$(OBJ)  ./ClapTrap.hpp ./ScavTrap.hpp ./FragTrap.hpp
+$(NAME)		:	$(OBJ)
 						$(CC) $(VERSION) $(FLAGS) $(OBJ) -o $(NAME) 
 %.o			:	%.cpp $(HEADER)
-								$(CC) $(VERSION)  $(FLAGS) $(DEBAG) -c $< -o $@
+								$(CC) $(VERSION) $(FLAGS) $(DEBAG) -c $< -o $@
 
 clean		:
 				$(RM) $(OBJ)
