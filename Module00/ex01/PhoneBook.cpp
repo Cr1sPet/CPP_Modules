@@ -54,7 +54,7 @@ void PhoneBook::addContact(Contact contact) {
 
 void PhoneBook::searchContact(int ind) {
 	
-	if (ind < 0 || ind > i) {
+	if (ind < 0 || ind > 7 || (!ok && ind >= i)) {
 		std::cout << "incorrect index" << std::endl;
 	} else {
 		contacts[ind].printAllFields();

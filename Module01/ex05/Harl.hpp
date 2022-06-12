@@ -12,12 +12,13 @@ private:
     void info( void );
     void warning( void );
     void error( void );
+    static const std::string types [4];
 
 public:
 
+    Harl();
     void complain ( std::string );
 
-    
 };
 
 #endif

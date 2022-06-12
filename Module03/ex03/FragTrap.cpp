@@ -1,13 +1,16 @@
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap() {}
+//FragTrap::FragTrap() {
+//    std::cout << "FragTrap's default constructor calles" << std::endl;
+//    this->setName("Default");
+//    this->setHitPoints(100);
+//    this->setEnergyPoints(50);
+//    this->setAttackDamage(20);
+//}
 
-FragTrap::FragTrap(std::string name) {
-    std::cout << "ScavTrap's constructor calles" << std::endl;
-    this->setName(name);
-    this->setHitPoints(100);
-    this->setEnergyPoints(50);
-    this->setAttackDamage(20);
+
+FragTrap::FragTrap(std::string name) : ClapTrap(name, 100, 50, 20) {
+    std::cout << "FragTrap's constructor calles" << std::endl;
 }
 
 FragTrap::~FragTrap() {

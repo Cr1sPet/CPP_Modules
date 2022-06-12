@@ -3,8 +3,7 @@
 #include <iostream>
 #include <string>
 
-
-
+const std::string	Harl::types[4] = {"debug", "info", "warning", "error"};
 
 void Harl::debug() {
     std::cout << "[DEBUG]. I love having extra bacon for my 7XL-double-cheese-triple-pickle-special-"\
@@ -26,22 +25,21 @@ void Harl::error() {
     std::cout << "[ERROR]. This is unacceptable! I want to speak to the manager now." << std::endl;
 }
 
-void Harl::complain ( std::string level ) {
+void Harl::complain ( const std::string level ) {
 
-    void (Harl::*funs_arr[])(void) = {&Harl::debug,
-                                &Harl::info,
-                                &Harl::warning,
-                                &Harl::error};
-    std::string types [4];
+    std::cout << "LEVEL : " << level << std::endl;
 
-    types[0] = "debug";
-    types[1] = "info";
-    types[2] = "warning";
-    types[3] = "error";
+      void		(Harl::*funcs_arr[4])(void) = {&Harl::debug,
+               												&Harl::info,
+               												&Harl::warning,
+               												&Harl::error};
 
     for (int i = 0; i < 4; i++) {
         if (0 == level.compare(types[i])) {
-            (this->*funs_arr[i])();
+            (this->*funcs_arr[i])();
         }
     }
+}
+
+Harl::Harl() {
 }

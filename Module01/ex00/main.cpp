@@ -1,4 +1,5 @@
 #include "Zombie.hpp"
+#include "Functions.hpp"
 
 int main() {
 
@@ -8,5 +9,5 @@ int main() {
     randomChump("Karl");
 
     delete(zombie);
-    return (0);
+    return 0;
 }

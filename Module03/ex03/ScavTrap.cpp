@@ -1,13 +1,8 @@
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap() {}
 
-ScavTrap::ScavTrap(std::string name) {
+ScavTrap::ScavTrap(std::string name) : ClapTrap(name, 100, 50, 20) {
     std::cout << "ScavTrap's constructor calles" << std::endl;
-    this->setName(name);
-    this->setHitPoints(100);
-    this->setEnergyPoints(50);
-    this->setAttackDamage(20);
 }
 
 ScavTrap::~ScavTrap() {

@@ -26,7 +26,6 @@ std::string process(char *input) {
 }
 
 int main (int argc, char **argv) {
-	std::string	input_message;
 	std::string output_message;
 
 	output_message = std::string("* LOUD AND UNBEARABLE FEEDBACK NOISE *");
@@ -35,8 +34,9 @@ int main (int argc, char **argv) {
 			output_message = process(argv[i]);
 			std::cout << output_message;
 		}
+        std::cout << std::endl;
 	} else {
-		std::cout << output_message;
+		std::cout << output_message << std::endl;
 	}
 	return (0);
 }

@@ -4,7 +4,19 @@
 
 ClapTrap::ClapTrap() {
     std::cout << "ClapTrap's non-arguments constructor called" << std::endl;
+    this->setName("Default");
+    this->setHitPoints(10);
+    this->setEnergyPoints(10);
+    this->setAttackDamage(0);
 }
+
+ClapTrap::ClapTrap( const std::string name ) : name(name),
+                                                hitPoints(10),
+                                                energyPoints(10),
+                                                attackDamage(0) {
+    std::cout << "ClapTrap's constructor called" << std::endl;
+}
+
 
 void ClapTrap::setName(std::string name) {
     this->name = name;
@@ -36,13 +48,6 @@ int ClapTrap::getAttackDamage() const {
 
 
 
-ClapTrap::ClapTrap( const std::string name ) {
-    std::cout << "ClapTrap's constructor called" << std::endl;
-    this->setName(name);
-    this->setHitPoints(10);
-    this->setEnergyPoints(10);
-    this->setAttackDamage(10);
-}
 
 ClapTrap & ClapTrap::operator = (const ClapTrap &clapTrap) {
     if (this != &clapTrap) {

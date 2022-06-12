@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Fri Jun 10 09:48:14 2022
+# Make data base, printed on Sun Jun 12 10:11:26 2022
 
 # Variables
 
@@ -45,13 +45,13 @@ CURDIR := /home/serj/projects/CPP_Modules
 # makefile
 SHELL = /bin/sh
 # environment
-SNAP_DATA = /var/snap/code/97
+SNAP_DATA = /var/snap/code/98
 # environment
 VTE_VERSION = 6003
 # environment
 VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
 # environment
-JOURNAL_STREAM = 8:57726
+JOURNAL_STREAM = 8:53003
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
 # environment
@@ -81,15 +81,15 @@ DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-MANAGERPID = 2152
+MANAGERPID = 2127
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-cc209aef-77ea-4cd6-bb56-4c881961246b.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-fd464253-5f19-4ff0-9df1-773135f39319.sock
 # environment
 LC_NAME = ru_RU.UTF-8
 # environment
-VSCODE_CWD = /home/serj/projects
+VSCODE_CWD = /home/serj
 # environment
-GSETTINGS_SCHEMA_DIR = /snap/code/97/usr/share/glib-2.0/schemas
+GSETTINGS_SCHEMA_DIR = /snap/code/98/usr/share/glib-2.0/schemas
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
@@ -99,15 +99,15 @@ GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
 LSCOLORS = Gxfxcxdxbxegedabagacad
 # environment
-SESSION_MANAGER = local/serj-GF63-Thin-9RCX:@/tmp/.ICE-unix/2388,unix/serj-GF63-Thin-9RCX:/tmp/.ICE-unix/2388
+SESSION_MANAGER = local/serj-GF63-Thin-9RCX:@/tmp/.ICE-unix/2377,unix/serj-GF63-Thin-9RCX:/tmp/.ICE-unix/2377
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
 GDK_PIXBUF_MODULE_FILE = /home/serj/snap/code/common/.cache/gdk-pixbuf-loaders.cache
 # environment
-SNAP = /snap/code/97
+SNAP = /snap/code/98
 # environment
-SNAP_VERSION = c3511e6c
+SNAP_VERSION = 4af164ea
 # environment
 XDG_MENU_PREFIX = gnome-
 # environment
@@ -117,9 +117,9 @@ DISABLE_WAYLAND = 1
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-INVOCATION_ID = 1898ea662f2c4931bc50c54a35c3d827
+INVOCATION_ID = fccd3f85ceaf4f8fa882dbd4f0435e4b
 # environment
-GDK_PIXBUF_MODULEDIR = /snap/code/97/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders
+GDK_PIXBUF_MODULEDIR = /snap/code/98/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -143,7 +143,7 @@ PWD = /home/serj/projects/CPP_Modules
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 2347
+SSH_AGENT_PID = 2327
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # environment
@@ -155,7 +155,7 @@ HOME = /home/serj
 # environment
 VSCODE_CLI = 1
 # environment
-VSCODE_CODE_CACHE_PATH = /home/serj/.config/Code/CachedData/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5
+VSCODE_CODE_CACHE_PATH = /home/serj/.config/Code/CachedData/4af164ea3a06f701fe3e89a2bcbb421d2026b68f
 # environment
 LOGNAME = serj
 # environment
@@ -191,7 +191,7 @@ MAKECMDGOALS := all
 # environment
 QT_IM_MODULE = ibus
 # environment
-SNAP_USER_DATA = /home/serj/snap/code/97
+SNAP_USER_DATA = /home/serj/snap/code/98
 # environment
 SHLVL = 1
 # environment
@@ -201,7 +201,7 @@ MAKE_VERSION := 4.2.1
 # environment
 USER = serj
 # environment
-SNAP_REVISION = 97
+SNAP_REVISION = 98
 # environment
 LC_MONETARY = ru_RU.UTF-8
 # makefile
@@ -223,7 +223,7 @@ OLDPWD = /home/serj
 # automatic
 *F = $(notdir $*)
 # environment
-VSCODE_IPC_HOOK = /run/user/1000/vscode-fa80ddbd-1.67.2-main.sock
+VSCODE_IPC_HOOK = /run/user/1000/vscode-fa80ddbd-1.68.0-main.sock
 # makefile
 MAKEFLAGS = pqrR
 # environment
@@ -257,11 +257,11 @@ PAGER = less
 # environment
 LC_ALL = C
 # environment
-GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/c19461c8_a9b4_4ccc_84b1_3f8ccfad96db
+GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/14f5b911_f846_4e67_951c_5cc749070393
 # automatic
 ^F = $(notdir $^)
 # environment
-GNOME_TERMINAL_SERVICE = :1.1510
+GNOME_TERMINAL_SERVICE = :1.128
 # default
 SUFFIXES := 
 # environment
@@ -273,7 +273,6 @@ WINDOWPATH = 2
 # default
 .INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
 # environment
- 
 LC_IDENTIFICATION = ru_RU.UTF-8
 # default
 .RECIPEPREFIX := 
@@ -284,7 +283,7 @@ LANG = C
 # environment
 TERM = xterm-256color
 # environment
-VSCODE_PID = 132788
+VSCODE_PID = 6792
 # variable set hash-table stats:
 # Load=136/1024=13%, Rehash=0, Collisions=20/158=13%
 
@@ -294,9 +293,9 @@ VSCODE_PID = 132788
 
 # Directories
 
-# . (device 2052, inode 5245165): 8 files, no impossibilities.
+# . (device 2052, inode 5245165): 9 files, no impossibilities.
 
-# 8 files, no impossibilities in 1 directories.
+# 9 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -313,6 +312,7 @@ all:
 
 # Not a target:
 Makefile:
+ 
 #  Implicit rule search has been done.
 #  File does not exist.
 #  File has been updated.
@@ -346,12 +346,12 @@ GNUmakefile:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 16 / storage = 139 B / avg = 8 B
-# current buf: size = 8162 B / used = 139 B / count = 16 / avg = 8 B
+# strcache buffers: 1 (0) / strings = 17 / storage = 145 B / avg = 8 B
+# current buf: size = 8162 B / used = 145 B / count = 17 / avg = 8 B
 
-# strcache performance: lookups = 19 / hit rate = 15%
+# strcache performance: lookups = 20 / hit rate = 15%
 # hash-table stats:
-# Load=16/8192=0%, Rehash=0, Collisions=1/19=5%
-# Finished Make data base on Fri Jun 10 09:48:14 2022
+# Load=17/8192=0%, Rehash=0, Collisions=1/20=5%
+# Finished Make data base on Sun Jun 12 10:11:26 2022
 
  

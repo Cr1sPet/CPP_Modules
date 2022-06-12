@@ -1,6 +1,5 @@
 #include "PhoneBook.hpp"
-#include <iomanip>
-
+#include <sstream>
 Contact readContact() {
 	Contact contact;
 	std::string input;
@@ -24,12 +23,25 @@ Contact readContact() {
 }
 
 int readInt() {
-	int a;
-	if (!(std::cin >> a)) {
-		std::cout << "incorrect input" << std::endl;
-		return(1);
-	}
-	return (a);
+	std::string inp;
+	std::cin >> inp;
+
+    if (inp[0] == '-') {
+        return -1;
+    } else {
+        for (size_t i = 0; i < inp.size(); i++) {
+            if (isdigit(inp[i]) == false) {
+                return -1;
+            }
+        }
+    }
+
+    int ret;
+    std::stringstream ss;
+    ss.str(inp);
+    ss >> ret;
+
+	return (ret);
 }
 
 int main(void) {
@@ -45,9 +57,8 @@ int main(void) {
 			std::cout << "entered contact successfully added!" << std::endl;
 		} else if (0 == input.compare("EXIT")) {
 			std::cout << "exit" << std::endl;
-			return (1);
+			return (0);
 		} else if (0 == input.compare("SEARCH")) {
-
 			if (pb.printContacts()) {
 				std::cout << "enter index of fild to get info:\n";
 				pb.searchContact(readInt());
@@ -56,5 +67,4 @@ int main(void) {
 			std::cout << "unrecognized input, try again!\n";
 		}
 	}
-	return (0);
 }
