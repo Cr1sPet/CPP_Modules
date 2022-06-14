@@ -1,5 +1,4 @@
 #include "Fixed.hpp"
-#include <iostream>
 #include <cmath>
 
 Fixed::Fixed( const int fixed ) {
@@ -51,19 +50,14 @@ std::ostream &operator << ( std::ostream &out, Fixed const &fixed ) {
     return out;
 }
 
-bool Fixed::operator >( const Fixed &fixed  ) const{
-
-    std::cout << "HELLO" << std::endl;
-    std::cout << " THIS " << this->getRawBits() << std::endl;
-    std::cout <<  " THAT " << fixed.getRawBits() << std::endl;
+bool Fixed::operator > ( const Fixed &fixed  ) const{
 
     if (this->toFloat() > fixed.toFloat()) {
-        std::cout << "HOH" << std::endl;
         return true;
     } else {
-        std::cout << "HOH1" << std::endl;
         return false;
     }
+
 }
 
 bool Fixed::operator < ( const Fixed &fixed ) const{
@@ -82,14 +76,13 @@ bool Fixed::operator == ( Fixed const &fixed  ) const {
     return this->getRawBits() == fixed.getRawBits();
 }
 
-bool Fixed::operator != ( Fixed const &fixed  ) {
+bool Fixed::operator != ( Fixed const &fixed  )  {
     return this->getRawBits() != fixed.getRawBits();
 }
 
 float Fixed::toFloat() const {
     return (float)this->fixedPointNum / ( 1 << this->fractionalBitsNum );
 }
-
 
 int Fixed::toInt()  const {
     return this->fixedPointNum >> this->fractionalBitsNum;
@@ -101,20 +94,17 @@ Fixed  Fixed::operator + ( Fixed const &fixed ) {
     return fixed1;
 }
 
-
 Fixed  Fixed::operator - ( Fixed const &fixed ) {
     Fixed fixed1;
     fixed1.setRawBits(this->fixedPointNum - fixed.fixedPointNum);
     return fixed1;
 }
 
-
 Fixed Fixed::operator * ( Fixed const &fixed ) {
     Fixed fixed1;
     fixed1.setRawBits((this->fixedPointNum * fixed.fixedPointNum) / (1 << this->fractionalBitsNum) );
     return fixed1;
 }
-
 
 Fixed Fixed::operator / ( Fixed const &fixed ) {
     Fixed fixed1;
@@ -128,20 +118,17 @@ Fixed Fixed::operator++ (int) {
     return val;
 }
 
-
 Fixed Fixed::operator++ () {
     Fixed val;
     val.fixedPointNum = ++this->fixedPointNum;
     return val;
 }
 
-
 Fixed Fixed::operator-- (int) {
     Fixed val;
     val.fixedPointNum = this->fixedPointNum--;
     return val;
 }
-
 
 Fixed Fixed::operator-- () {
     Fixed val;
@@ -151,31 +138,32 @@ Fixed Fixed::operator-- () {
 
 Fixed &Fixed::max(Fixed &first, Fixed &second)
 {
-        if (first > second || first == second) {
-            return first;
-        }
-        return second;
+    if (first > second || first == second) {
+        return first;
+    }
+    return second;
 }
 
 const Fixed &Fixed::max(const Fixed &first, const Fixed &second) {
-        if (first > second || first == second) {
+
+    if (first > second || first == second) {
             return first;
-        }
-        return second;
+    }
+    return second;
 }
 
 
 Fixed &Fixed::min(Fixed &first, Fixed &second)
 {
-        if (first < second) {
-            return first;
-        }
-        return second;
+    if (first < second) {
+        return first;
+    }
+    return second;
 }
 
 const Fixed &Fixed::min(const Fixed &first, const Fixed &second) {
-        if (first < second) {
-            return first;
-        }
-        return second;
+    if (first < second) {
+        return first;
+    }
+    return second;
 }

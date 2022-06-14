@@ -1,47 +1,49 @@
 #include "ClapTrap.hpp"
-#include <iostream>
 
-
-ClapTrap::ClapTrap() {
-    std::cout << "ClapTrap's non-arguments constructor called" << std::endl;
+ClapTrap::ClapTrap() : defaultAttackDamage(0), defaultHitPoints(10), defaultEnergyPoints(10) {
+    std::cout << "CallTrap's default constructor called" << std::endl;
 }
 
 void ClapTrap::setName(std::string name) {
     this->name = name;
 }
 
-void ClapTrap::setHitPoints(int hitPoints) {
+std::string ClapTrap::getName () const {
+    return name;
+}
+
+void ClapTrap::setHitPoints(unsigned int hitPoints) {
     this->hitPoints = hitPoints;
 }
 
-int ClapTrap::getHitPoints() const {
+unsigned int ClapTrap::getHitPoints() const {
     return this->hitPoints;
 }
 
-void ClapTrap::setEnergyPoints(int energyPoints) {
+void ClapTrap::setEnergyPoints(unsigned int energyPoints) {
     this->energyPoints = energyPoints;
 }
 
-int ClapTrap::getEnergyPoints() const {
+unsigned int ClapTrap::getEnergyPoints() const {
     return energyPoints;
 }
 
-void ClapTrap::setAttackDamage(int attackDamage) {
+void ClapTrap::setAttackDamage(unsigned int attackDamage) {
     this->attackDamage = attackDamage;
 }
 
-int ClapTrap::getAttackDamage() const {
+unsigned int ClapTrap::getAttackDamage() const {
     return this->attackDamage;
 }
 
+ClapTrap::ClapTrap( const std::string name )  : defaultAttackDamage(0), defaultHitPoints(10), defaultEnergyPoints(10) {
 
-
-ClapTrap::ClapTrap( const std::string name ) {
-    std::cout << "ClapTrap's constructor called" << std::endl;
     this->setName(name);
-    this->setHitPoints(10);
-    this->setEnergyPoints(10);
-    this->setAttackDamage(10);
+    this->setHitPoints(defaultHitPoints);
+    this->setEnergyPoints(defaultEnergyPoints);
+    this->setAttackDamage(defaultAttackDamage);
+    std::cout << "ClapTrap's constructor called. " << std::endl;
+
 }
 
 ClapTrap & ClapTrap::operator = (const ClapTrap &clapTrap) {
@@ -51,75 +53,89 @@ ClapTrap & ClapTrap::operator = (const ClapTrap &clapTrap) {
     return *this;
 }
 
+ClapTrap::ClapTrap ( const ClapTrap & clapTrap ) : defaultAttackDamage(0), defaultHitPoints(10), defaultEnergyPoints(10) {
+    this->name = clapTrap.getName();
+}
+
+
 ClapTrap::~ClapTrap() {
     std::cout << "ClapTrap's destructor called" << std::endl;
 }
 
-std::string ClapTrap::getName () const {
-    return name;
+bool ClapTrap::isAlive() {
+    if (hitPoints <= 0) {
+        return false;
+    }
+    return true;
+}
+
+bool ClapTrap::isActive() {
+
+    if (0 >= energyPoints) {
+        return false;
+    }
+    return true;
 }
 
 void ClapTrap::attack( const std::string & target) {
-    if (isActive()) {
+    bool active = isActive();
+    bool alive = isAlive();
+    if ( isActive() && isAlive() ) {
         std::cout << "ClapTrap " << name\
-                    << " attacks " << target\
+                    << " attacks ClapTrap " << target\
                     << " causing " << attackDamage\
                     << " points of damage"\
                     << std::endl;
         energyPoints--;
+    } else {
+        if (!alive) {
+            std::cout << "ClapTrap " << name << " can not to attack : Hit Points is 0" << std::endl;
+        } else if (!active) {
+            std::cout << "ClapTrap " << name << " can not to attack : Energy Points 0" << std::endl;
+        }
     }
 }
 
 void ClapTrap::beRepaired(unsigned int amount) {
-    if (energyPoints > 0) {
-        hitPoints += amount;
-        energyPoints--;
-        std::cout << "ClapTrap " << name\
-                    << " is repaired, health increased by "\
+    if (isActive()) {
+        if (!isAlive()) {
+            std::cout << "ClapTrap " << name\
+                    << " was revived, health increased by "\
                     << amount << " hit points"\
                     << std::endl;
+        } else {
+            std::cout << "ClapTrap " << name\
+                    << " was repaired, health increased by "\
+                    << amount << " hit points"\
+                    << std::endl;
+        }
+        energyPoints--;
+        hitPoints += amount;
     }
 }
 
 void ClapTrap::takeDamage( unsigned int amount ) {
-    if (isActive(amount)) {
-        hitPoints -= amount;
+    hitPoints -= amount;
+    if (!isAlive()) {
         std::cout << "ClapTrap " << name\
-                    << " was damaged, health decreased by "\
-                    << amount << " hit points"\
-                    << std::endl;
+                << " was killed, health decreased by "\
+                << amount << " hit points"\
+                << std::endl;
+        hitPoints = 0;
+    } else {
+        std::cout << "ClapTrap " << name\
+                << " was damaged, health decreased by "\
+                << amount << " hit points"\
+                << std::endl;
     }
-}
 
-bool ClapTrap::isActive() {
-    if (0 == hitPoints) {
-        std::cout << "hit points is null" << std::endl;
-        return false;
-    }
-    if (0 == energyPoints) {
-        std::cout << "energy points is null" << std::endl;
-        return false;
-    }
-    return true;
-}
-
-
-bool ClapTrap::isActive(unsigned int amount) {
-    if ( (int) (hitPoints - amount) < 0) {
-        std::cout << "hit points is null" << std::endl;
-        return false;
-    }
-    if (0 == energyPoints) {
-        std::cout << "energy points is null" << std::endl;
-        return false;
-    }
-    return true;
 }
 
 std::ostream &operator << ( std::ostream &out, ClapTrap const &clapTrap ) {
 
-    out << "Clap Trap name : " <<  clapTrap.getName()\
-        << "; current HP : " << clapTrap.getHitPoints()\
-        << "; current Energy : " << clapTrap.getEnergyPoints();
+    out << "Name : " <<  clapTrap.getName()\
+        << "; Attack damage : " << clapTrap.getAttackDamage()\
+        << "; HP : " << clapTrap.getHitPoints()\
+        << "; Energy : " << clapTrap.getEnergyPoints();
     return out;
 }

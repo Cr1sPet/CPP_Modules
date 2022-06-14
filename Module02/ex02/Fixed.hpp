@@ -13,34 +13,34 @@ private:
 public:
 
     Fixed ( const int );
-
     Fixed ( const float );
 
     Fixed ();
-    Fixed (const Fixed & fixed);
+    Fixed ( const Fixed & );
+    Fixed & operator = ( const Fixed & );
     ~Fixed ();
-    Fixed & operator = (const Fixed & fixed);
-    bool  operator > (const Fixed & fixed) const;
-    bool  operator < (const Fixed & fixed) const;
-    bool  operator >= (const Fixed & fixed) const;
-    bool  operator <= (const Fixed & fixed) const;
-    bool  operator == (const Fixed & fixed) const;
-    bool  operator != (const Fixed & fixed);
 
-    Fixed  operator + (const Fixed & fixed);
-    Fixed  operator - (const Fixed & fixed);
-    Fixed  operator * (const Fixed & fixed);
-    Fixed  operator / (const Fixed & fixed);
+    bool  operator > ( const Fixed & ) const;
+    bool  operator < ( const Fixed & ) const;
+    bool  operator >= ( const Fixed & ) const;
+    bool  operator <= ( const Fixed & ) const;
+    bool  operator == ( const Fixed & ) const;
+    bool  operator != ( const Fixed & ) ;
+
+    Fixed  operator + ( const Fixed & );
+    Fixed  operator - ( const Fixed & );
+    Fixed  operator * ( const Fixed & );
+    Fixed  operator / ( const Fixed & );
 
     Fixed operator ++ ();
     Fixed operator ++ (int);
     Fixed operator -- ();
     Fixed operator -- (int);
 
-    static Fixed & max(Fixed &first, Fixed &second);
-    static const Fixed & max(const Fixed &first, const Fixed &second);
-    static Fixed & min(Fixed &first, Fixed &second);
-    static const Fixed & min(const Fixed &first, const Fixed &second);
+    static Fixed & max( Fixed &, Fixed &);
+    static const Fixed & max( const Fixed &, const Fixed & );
+    static Fixed & min( Fixed &, Fixed & ) ;
+    static const Fixed & min( const Fixed &, const Fixed & );
 
 
     int getRawBits( void ) const;

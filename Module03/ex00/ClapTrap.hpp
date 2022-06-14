@@ -7,36 +7,39 @@ class ClapTrap {
 
 private:
 
+    const unsigned int defaultAttackDamage;
+    const unsigned int defaultHitPoints;
+    const unsigned int defaultEnergyPoints;
+
     std::string name;
-    int hitPoints;
-    int energyPoints;
-    int attackDamage;
+    unsigned int hitPoints;
+    unsigned int energyPoints;
+    unsigned int attackDamage;
     bool isActive();
-    bool isActive(unsigned int amount);
+    bool isAlive();
+    bool isActive( unsigned int );
 
 
 public:
 
     ClapTrap();
-    ClapTrap(std::string name);
     ClapTrap & operator = ( const ClapTrap & );
-    ClapTrap ( const ClapTrap & clapTrap ) {
-        this->name = clapTrap.getName();
-    }
-
+    ClapTrap ( const ClapTrap &  );
     ~ClapTrap();
+
+    ClapTrap(std::string name);
     std::string getName() const;
     void setName( std::string );
-    int getHitPoints() const;
-    void setHitPoints( int );
-    int getEnergyPoints() const;
-    void setEnergyPoints( int );
-    int getAttackDamage() const;
-    void setAttackDamage( int );
+    unsigned int getHitPoints() const;
+    void setHitPoints( unsigned int );
+    unsigned int getEnergyPoints() const;
+    void setEnergyPoints( unsigned int );
+    unsigned int getAttackDamage() const;
+    void setAttackDamage( unsigned int );
 
     void attack( const std::string & );
-    void takeDamage(unsigned int);
-    void beRepaired(unsigned int);
+    void takeDamage( unsigned int );
+    void beRepaired( unsigned int );
 
 };
 
