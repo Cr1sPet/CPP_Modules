@@ -17,7 +17,7 @@ CC			=	c++
 
 RM			=	rm -rf
 
-FLAGS		=	 -Wall -Wextra -Werror 
+FLAGS		=	 -Wall -Wextra -Werror
 
 VERSION		=	-std=c++98
 

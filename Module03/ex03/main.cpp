@@ -1,10 +1,15 @@
+#include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
+#include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
-int main( void ) {
-    
-    ScavTrap scavTrap ("Bomb");
-    scavTrap.attack("Serj");
-    scavTrap.takeDamage(11);
-    scavTrap.guardGate();
-    return 0;
+int main(void){
+    DiamondTrap dima = DiamondTrap("dima");
+    ClapTrap clap = ClapTrap("Clap");
+
+    dima.whoAmI();
+    dima.attack(clap.getName());
+    dima.takeDamage(10);
+    dima.beRepaired(10);
+    dima.whoAmI();
 }

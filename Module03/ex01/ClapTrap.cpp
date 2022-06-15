@@ -1,6 +1,6 @@
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap() : defaultAttackDamage(0), defaultHitPoints(10), defaultEnergyPoints(10) {
+ClapTrap::ClapTrap() : hitPoints(10), energyPoints(10), attackDamage(0) {
     std::cout << "CallTrap's default constructor called" << std::endl;
 }
 
@@ -14,6 +14,13 @@ std::string ClapTrap::getName () const {
 
 void ClapTrap::setHitPoints(unsigned int hitPoints) {
     this->hitPoints = hitPoints;
+}
+
+ClapTrap::ClapTrap( std::string name, unsigned int hitPoints, unsigned int energyPoints, unsigned int attackDamage ) {
+    this->name = name;
+    this->hitPoints = hitPoints;
+    this->energyPoints = energyPoints;
+    this->attackDamage = attackDamage;
 }
 
 unsigned int ClapTrap::getHitPoints() const {
@@ -36,25 +43,32 @@ unsigned int ClapTrap::getAttackDamage() const {
     return this->attackDamage;
 }
 
-ClapTrap::ClapTrap( const std::string name )  : defaultAttackDamage(0), defaultHitPoints(10), defaultEnergyPoints(10) {
+ClapTrap::ClapTrap( const std::string name )  : hitPoints(10), energyPoints(10), attackDamage(0) {
 
     this->setName(name);
-    this->setHitPoints(defaultHitPoints);
-    this->setEnergyPoints(defaultEnergyPoints);
-    this->setAttackDamage(defaultAttackDamage);
     std::cout << "ClapTrap's constructor called. " << std::endl;
 
 }
 
 ClapTrap & ClapTrap::operator = (const ClapTrap &clapTrap) {
+
     if (this != &clapTrap) {
         this->name = clapTrap.getName();
+        this->hitPoints = clapTrap.getHitPoints();
+        this->energyPoints = clapTrap.getEnergyPoints();
+        this->attackDamage = clapTrap.getAttackDamage();
     }
+
+    std::cout << "Assignment operator ClapTrap" << std::endl;
+
     return *this;
 }
 
-ClapTrap::ClapTrap ( const ClapTrap & clapTrap ) : defaultAttackDamage(0), defaultHitPoints(10), defaultEnergyPoints(10) {
-    this->name = clapTrap.getName();
+ClapTrap::ClapTrap ( const ClapTrap & clapTrap ) {
+
+    *this = clapTrap;
+    std::cout << "Copy constructor ClapTrap" << std::endl;
+
 }
 
 
@@ -81,17 +95,17 @@ void ClapTrap::attack( const std::string & target) {
     bool active = isActive();
     bool alive = isAlive();
     if ( isActive() && isAlive() ) {
-        std::cout << "ClapTrap " << name\
-                    << " attacks ClapTrap " << target\
+        std::cout <<  name\
+                    << " attacks " << target\
                     << " causing " << attackDamage\
                     << " points of damage"\
                     << std::endl;
         energyPoints--;
     } else {
         if (!alive) {
-            std::cout << "ClapTrap " << name << " can not to attack : Hit Points is 0" << std::endl;
+            std::cout << name << " can not to attack : Hit Points is 0" << std::endl;
         } else if (!active) {
-            std::cout << "ClapTrap " << name << " can not to attack : Energy Points 0" << std::endl;
+            std::cout << name << " can not to attack : Energy Points 0" << std::endl;
         }
     }
 }

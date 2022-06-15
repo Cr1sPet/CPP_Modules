@@ -7,10 +7,6 @@ class ClapTrap {
 
 private:
 
-    const unsigned int defaultAttackDamage;
-    const unsigned int defaultHitPoints;
-    const unsigned int defaultEnergyPoints;
-
     std::string name;
     unsigned int hitPoints;
     unsigned int energyPoints;
@@ -18,7 +14,6 @@ private:
     bool isActive();
     bool isAlive();
     bool isActive( unsigned int );
-
 
 public:
 

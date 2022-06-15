@@ -1,6 +1,6 @@
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap() : defaultAttackDamage(0), defaultHitPoints(10), defaultEnergyPoints(10) {
+ClapTrap::ClapTrap() : hitPoints(10), energyPoints(10), attackDamage(0) {
     std::cout << "CallTrap's default constructor called" << std::endl;
 }
 
@@ -36,12 +36,9 @@ unsigned int ClapTrap::getAttackDamage() const {
     return this->attackDamage;
 }
 
-ClapTrap::ClapTrap( const std::string name )  : defaultAttackDamage(0), defaultHitPoints(10), defaultEnergyPoints(10) {
+ClapTrap::ClapTrap( const std::string name )  : hitPoints(10), energyPoints(10), attackDamage(0) {
 
     this->setName(name);
-    this->setHitPoints(defaultHitPoints);
-    this->setEnergyPoints(defaultEnergyPoints);
-    this->setAttackDamage(defaultAttackDamage);
     std::cout << "ClapTrap's constructor called. " << std::endl;
 
 }
@@ -53,7 +50,7 @@ ClapTrap & ClapTrap::operator = (const ClapTrap &clapTrap) {
     return *this;
 }
 
-ClapTrap::ClapTrap ( const ClapTrap & clapTrap ) : defaultAttackDamage(0), defaultHitPoints(10), defaultEnergyPoints(10) {
+ClapTrap::ClapTrap ( const ClapTrap & clapTrap ) :  hitPoints(10), energyPoints(10), attackDamage(0) {
     this->name = clapTrap.getName();
 }
 

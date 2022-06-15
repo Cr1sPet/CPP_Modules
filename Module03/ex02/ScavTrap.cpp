@@ -1,30 +1,40 @@
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap() {}
+void ScavTrap::guardGate() {
 
-ScavTrap::ScavTrap(std::string name) {
-    std::cout << "ScavTrap's constructor calles" << std::endl;
-    this->setName(name);
-    this->setHitPoints(100);
-    this->setEnergyPoints(50);
-    this->setAttackDamage(20);
+    std::cout << "ScavTrap is now in Gate keeper mode" << std::endl;
+
+}
+
+ScavTrap::ScavTrap() {
+    std::cout << "Default constructor ScavTrap" << std::endl;
+}
+
+ScavTrap::ScavTrap ( const ScavTrap & scavTrap ) : ClapTrap( scavTrap ) {
+
+    std::cout << "Copy constructor ScavTrap" << std::endl;
+
+}
+
+ScavTrap & ScavTrap::operator = ( const ScavTrap & scavTrap ) {
+    ClapTrap::operator=(scavTrap);
+    std::cout << "Assignment operator ScavTrap" << std::endl;
+    return  *this;
 }
 
 ScavTrap::~ScavTrap() {
-    std::cout << "ScavTrap's destructor called" << std::endl;
+    std::cout << "Destructor ScavTrap" << std::endl;
 }
 
-void ScavTrap::attack( const std::string & target) {
-    if (isActive()) {
-        std::cout << "ScavTrap " << this->getName()\
-                << " attacks " << target\
-                << " causing " << this->getAttackDamage()\
-                << " points of damage"\
-                << std::endl;
-        setEnergyPoints(getEnergyPoints() - 1);
-    }
+ScavTrap::ScavTrap (  std::string name ) : ClapTrap( name, 100, 50, 20) {
+
+    std::cout << "ScavTrap Constructor" << std::endl;
 }
 
-void ScavTrap::guardGate() {
-    std::cout << "ScavTrap is now in Gate keeper mode" << std::endl;
+
+void ScavTrap::attack(const std::string & target) {
+    std::cout << "ScavTrap ";
+    ClapTrap::attack(target);
 }
+
+
