@@ -7,6 +7,10 @@ void ScavTrap::guardGate() {
 }
 
 ScavTrap::ScavTrap() {
+    this->setName("");
+    this->setHitPoints(100);
+    this->setEnergyPoints(50);
+    this->setAttackDamage(20);
     std::cout << "Default constructor ScavTrap" << std::endl;
 }
 

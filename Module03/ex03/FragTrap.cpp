@@ -1,6 +1,10 @@
 #include "FragTrap.hpp"
 
 FragTrap::FragTrap() {
+    this->setName("");
+    this->setHitPoints(100);
+    this->setEnergyPoints(100);
+    this->setAttackDamage(30);
     std::cout << "Default constructor FragTrap" << std::endl;
 }
 

@@ -4,12 +4,32 @@
 #include "DiamondTrap.hpp"
 
 int main(void){
-    DiamondTrap dima = DiamondTrap("dima");
-    ClapTrap clap = ClapTrap("Clap");
+    DiamondTrap diamond = DiamondTrap("Diamond");
+    FragTrap frag = FragTrap("frag");
+    ScavTrap scav = ScavTrap("scav");
 
-    dima.whoAmI();
-    dima.attack(clap.getName());
-    dima.takeDamage(10);
-    dima.beRepaired(10);
-    dima.whoAmI();
+    std::cout << std::endl;
+    std::cout << frag << std::endl;
+    std::cout << std::endl;
+
+    std::cout << scav << std::endl;
+    std::cout << std::endl;
+
+    std::cout << diamond << std::endl;
+    std::cout << std::endl;
+
+    diamond.attack(frag.getName());
+    std::cout << std::endl;
+    diamond.takeDamage(100);
+    std::cout << std::endl;
+    diamond.beRepaired(50);
+    std::cout << std::endl;
+
+    diamond.whoAmI();
+    std::cout << std::endl;
+
+    diamond.guardGate();
+    std::cout << std::endl;
+
+
 }

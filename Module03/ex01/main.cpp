@@ -3,19 +3,29 @@
 
 int main(void){
     ClapTrap clap("Clap");
-    ClapTrap trap("Trap");
-    ScavTrap scav("unit");
+    ScavTrap scav("Scav");
+    std::cout << scav << std::endl;
 
-    clap.attack(trap.getName());
-    trap.takeDamage(clap.getAttackDamage());
-    trap.beRepaired(3);
-    trap.takeDamage(5);
-    trap.beRepaired(2);
+
+    scav.takeDamage(99);
+    std::cout << scav << std::endl;
+    std::cout << std::endl;
+
+    scav.takeDamage(10);
+    std::cout << scav << std::endl;
+    std::cout << std::endl;
+
+
+    scav.beRepaired(50);
+    std::cout << scav << std::endl;
+    std::cout << std::endl;
+
     scav.attack(clap.getName());
-    scav.takeDamage(3);
-    scav.beRepaired(3);
-    std::cout << clap;
-    std::cout << trap;
-    std::cout << scav;
+    std::cout << scav << std::endl;
+    std::cout << std::endl;
 
+    scav.guardGate();
+    std::cout << std::endl;
+
+    return 0;
 }

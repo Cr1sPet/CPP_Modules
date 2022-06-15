@@ -3,25 +3,29 @@
 #include "FragTrap.hpp"
 
 int main(void) {
-    ClapTrap clap("Clap");
-    ClapTrap trap("Trap");
-    ScavTrap scav("scav");
-    FragTrap frag("frag");
-
-    clap.attack(trap.getName());
-    frag.attack(clap.getName());
-    trap.takeDamage(clap.getAttackDamage());
-    trap.beRepaired(3);
-    trap.takeDamage(5);
-    trap.beRepaired(2);
-    scav.attack(clap.getName());
-    scav.takeDamage(3);
-    scav.beRepaired(3);
-    frag.takeDamage(trap.getAttackDamage());
-    frag.beRepaired(4);
-
-    std::cout << trap << std::endl;
-    std::cout << clap << std::endl;
+    FragTrap frag("Frag");
+    ScavTrap scav("Scav");
     std::cout << frag << std::endl;
+
+    frag.takeDamage(99);
+    std::cout << frag << std::endl;
+    std::cout << std::endl;
+
+    frag.takeDamage(10);
+    std::cout << frag << std::endl;
+    std::cout << std::endl;
+
+
+    frag.beRepaired(50);
+    std::cout << frag << std::endl;
+    std::cout << std::endl;
+
+    frag.attack(scav.getName());
+    std::cout << frag << std::endl;
+    std::cout << std::endl;
+
+    frag.highFivesGuys();
+    std::cout << std::endl;
+
     return 0;
 }
