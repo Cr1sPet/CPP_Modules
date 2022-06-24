@@ -8,9 +8,9 @@ class ClapTrap {
 private:
 
     std::string name;
-    unsigned int hitPoints;
-    unsigned int energyPoints;
-    unsigned int attackDamage;
+    long hitPoints;
+    long energyPoints;
+    long attackDamage;
     bool isActive();
     bool isAlive();
     bool isActive( unsigned int );

@@ -17,6 +17,7 @@ void ClapTrap::setHitPoints(unsigned int hitPoints) {
 }
 
 ClapTrap::ClapTrap( std::string name, unsigned int hitPoints, unsigned int energyPoints, unsigned int attackDamage ) {
+    std::cout << "ClapTrap's constructor called. " << std::endl;
     this->name = name;
     this->hitPoints = hitPoints;
     this->energyPoints = energyPoints;
@@ -45,9 +46,9 @@ unsigned int ClapTrap::getAttackDamage() const {
 
 ClapTrap::ClapTrap( const std::string name )  : hitPoints(10), energyPoints(10), attackDamage(0) {
 
-    this->setName(name);
     std::cout << "ClapTrap's constructor called. " << std::endl;
 
+    this->setName(name);
 }
 
 ClapTrap & ClapTrap::operator = (const ClapTrap &clapTrap) {
