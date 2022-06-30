@@ -1,9 +1,18 @@
-NAME	=	clap_trap
+NAME		=	poly
 
 SRCS		=	main.cpp\
-				ClapTrap.cpp\
+				Animal.cpp\
+				Cat.cpp\
+				Dog.cpp\
+				WrongAnimal.cpp\
+				WrongCat.cpp\
 
-HEADER		=	./ClapTrap.hpp
+HEADER		=	./Animal.hpp\
+				./Cat.hpp\
+				./Dog.hpp\
+				./WrongAnimal.hpp\
+				./WrongCat.hpp\
+
 
 OBJ			=	$(SRCS:.cpp=.o)
 
@@ -11,7 +20,7 @@ CC			=	c++
 
 RM			=	rm -rf
 
-FLAGS		=	 -Wall -Wextra -Werror 
+#FLAGS		=	 -Wall -Wextra -Werror
 
 VERSION		=	-std=c++98
 
