@@ -23,5 +23,6 @@ int main (void) {
         delete animals[j];
     }
     delete []animals;
+
     return 0;
 }

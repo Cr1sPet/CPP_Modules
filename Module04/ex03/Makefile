@@ -1,18 +1,13 @@
 NAME		=	poly
 
 SRCS		=	main.cpp\
-				Animal.cpp\
-				Cat.cpp\
-				Dog.cpp\
-				Brain.cpp\
-				WrongAnimal.cpp\
-				WrongCat.cpp\
+				AMateria.cpp\
+				Cure.cpp\
+				Ice.cpp\
 
-HEADER		=	./Animal.hpp\
-				./Cat.hpp\
-				./Dog.hpp\
-				./WrongAnimal.hpp\
-				./WrongCat.hpp\
+HEADER		=	AMateria.h\
+                Cure.h\
+                Ice.h\
 
 
 OBJ			=	$(SRCS:.cpp=.o)
@@ -21,7 +16,7 @@ CC			=	c++
 
 RM			=	rm -rf
 
-FLAGS		=	 -Wall -Wextra -Werror
+#FLAGS		=	 -Wall -Wextra -Werror
 
 VERSION		=	-std=c++98
 
