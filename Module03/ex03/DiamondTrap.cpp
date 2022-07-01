@@ -23,8 +23,7 @@ DiamondTrap::~DiamondTrap() {
 
 }
 
-
-DiamondTrap::DiamondTrap ( const DiamondTrap & diamondTrap ) : ClapTrap( diamondTrap ), FragTrap(diamondTrap), ScavTrap(diamondTrap) {
+DiamondTrap::DiamondTrap ( const DiamondTrap & diamondTrap ) : ClapTrap( diamondTrap ), ScavTrap(diamondTrap), FragTrap(diamondTrap) {
 
     std::cout << "Copy constructor DiamondTrap" << std::endl;
 

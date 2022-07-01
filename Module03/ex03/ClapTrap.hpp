@@ -7,13 +7,16 @@ class ClapTrap {
 
 private:
 
-    std::string name;
-    unsigned int hitPoints;
-    unsigned int energyPoints;
-    unsigned int attackDamage;
     bool isActive();
     bool isAlive();
     bool isActive( unsigned int );
+
+private:
+
+    std::string name;
+    long hitPoints;
+    long energyPoints;
+    long attackDamage;
 
 public:
 
