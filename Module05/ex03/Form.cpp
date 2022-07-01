@@ -8,6 +8,13 @@
  *  Initialization constructor
  */
 
+Form::Form(std::string name, std::string target) : name(name), target(target),
+                gradeToSign(150), gradeToExecute(150), sign(false) {
+
+//    std::cout << "Initialization constructor Form" << std::endl;
+
+}
+
 Form::Form(std::string name, int gradeToSign, int gradeToExecute) : name(name), gradeToSign(gradeToSign),
                                 gradeToExecute(gradeToExecute) {
 

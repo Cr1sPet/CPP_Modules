@@ -1,31 +1,46 @@
 
 #include "Bureaucrat.h"
+#include "PresidentialPardonForm.h"
+#include "RobotomyRequestForm.h"
+#include "ShrubberyCreationForm.h"
 
 int main (void) {
 
     try {
-        Form form("first", 100, 50);
-        Bureaucrat bureaucrat("Bob", 101);
-        bureaucrat.signForm(form);
-
-        bureaucrat.incrementGrade(1);
-        bureaucrat.signForm(form);
-    } catch (std::exception &e) {
-        std::cout << e.what();
-    }
-
-    try {
-        Form form1("second", 151, 50);
-    } catch (Form::GradeTooLowException & e) {
-        std::cout << e.what() << std::endl;
-    }
-
-    try {
-        Form form1("second", 12, 0);
+        PresidentialPardonForm presidentialPardonForm ("Bicycle");
+        std::cout << presidentialPardonForm << std::endl;
+        RobotomyRequestForm robotomyRequestForm ("Bicycle");
+        std::cout << robotomyRequestForm << std::endl;
+        ShrubberyCreationForm shrubberyCreationForm ("Bicycle");
+        std::cout << shrubberyCreationForm << std::endl;
+        Bureaucrat bureaucrat("Bob", 45);
+        bureaucrat.signForm(shrubberyCreationForm);
+        bureaucrat.executeForm(shrubberyCreationForm);
     } catch (std::exception & e) {
         std::cout << e.what() << std::endl;
     }
 
+
+
     return 0;
 }
 
+//void hello () {
+//    throw "Error file opening!";
+//}
+//
+//void world() {
+//    hello();
+//}
+//
+//
+//int main () {
+//
+//    try {
+//        world();
+//    } catch (const char * cstr) {
+//        std::cout << " be1cause " << cstr << std::endl;
+//    }
+//
+//    return 0;
+//}

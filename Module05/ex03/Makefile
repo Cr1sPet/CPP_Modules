@@ -6,12 +6,15 @@ SRCS		=	main.cpp\
 				PresidentialPardonForm.cpp\
 				RobotomyRequestForm.cpp\
 				ShrubberyCreationForm.cpp\
+				Intern.cpp\
 
 HEADER		=	./Bureaucrat.h\
 				./Form.h\
 				./PresidentialPardonForm.hpp\
-				./RobotomyRequestForm.cpp\
-				ShrubberyCreationForm.cpp\
+				./RobotomyRequestForm.hpp\
+				./ShrubberyCreationForm.hpp\
+				./Intern.hpp
+
 
 
 

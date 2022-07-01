@@ -10,6 +10,7 @@ int main (void) {
 
         bureaucrat.incrementGrade(1);
         bureaucrat.signForm(form);
+
     } catch (std::exception &e) {
         std::cout << e.what();
     }

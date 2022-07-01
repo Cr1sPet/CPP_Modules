@@ -32,9 +32,10 @@ public:
     Form();
     Form & operator = ( const Form & );
     Form ( const Form & );
-    ~Form();
+    virtual ~Form();
 
     Form(std::string, int, int);
+    Form(std::string, std::string);
 
     std::string getName() const;
     int getGradeToSign() const;
