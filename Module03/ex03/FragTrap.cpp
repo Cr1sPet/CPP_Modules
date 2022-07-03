@@ -25,7 +25,7 @@ FragTrap::FragTrap (  std::string name ) {
     this->name= name;
     this->hitPoints = 100;
     this->energyPoints = 100;
-    this->attackDamage = 20;
+    this->attackDamage = 30;
     std::cout << "FragTrap Constructor" << std::endl;
 }
 

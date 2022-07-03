@@ -4,8 +4,7 @@
 #include "DiamondTrap.hpp"
 
 int main(void){
-    DiamondTrap diamond = DiamondTrap("Diamond");
-    std::cout << diamond.getAttackDamage() << std::endl;
+    DiamondTrap diamond = DiamondTrap("Dima");
 
     std::cout << diamond << std::endl;
 
@@ -27,7 +26,6 @@ int main(void){
     diamond.beRepaired(50);
     diamond.whoAmI();
     diamond.guardGate();
+    diamond.highFivesGuys();
     std::cout << std::endl;
-
-
 }
