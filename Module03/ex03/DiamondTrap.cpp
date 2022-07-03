@@ -10,9 +10,9 @@ DiamondTrap::DiamondTrap (  std::string name ) : ClapTrap(name) {
 
     this->name = name;
     ClapTrap::setName(this->name + "_clap_name");
-    this->setHitPoints((FragTrap::getHitPoints()));
-    this->setEnergyPoints(ScavTrap::getEnergyPoints());
-    this->setAttackDamage(FragTrap::getAttackDamage());
+    this->setHitPoints(100);
+    this->setEnergyPoints(50);
+    this->setAttackDamage(30);
     std::cout << "DiamondTrap constructor" << std::endl;
 
 }

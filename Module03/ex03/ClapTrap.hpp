@@ -11,7 +11,7 @@ private:
     bool isAlive();
     bool isActive( unsigned int );
 
-private:
+protected:
 
     std::string name;
     long hitPoints;

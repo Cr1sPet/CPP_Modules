@@ -4,7 +4,7 @@
 #include "ClapTrap.hpp"
 #include <iostream>
 
-class ScavTrap : public virtual ClapTrap {
+class ScavTrap : virtual public ClapTrap {
 
 public:
 

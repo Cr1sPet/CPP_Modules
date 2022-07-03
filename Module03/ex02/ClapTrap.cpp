@@ -46,9 +46,9 @@ unsigned int ClapTrap::getAttackDamage() const {
 
 ClapTrap::ClapTrap( const std::string name )  : hitPoints(10), energyPoints(10), attackDamage(0) {
 
+    this->setName(name);
     std::cout << "ClapTrap's constructor called. " << std::endl;
 
-    this->setName(name);
 }
 
 ClapTrap & ClapTrap::operator = (const ClapTrap &clapTrap) {
@@ -96,7 +96,7 @@ void ClapTrap::attack( const std::string & target) {
     bool active = isActive();
     bool alive = isAlive();
     if ( isActive() && isAlive() ) {
-        std::cout <<  name\
+        std::cout << "ClapTrap " << name\
                     << " attacks " << target\
                     << " causing " << attackDamage\
                     << " points of damage"\

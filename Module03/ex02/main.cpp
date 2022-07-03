@@ -6,15 +6,11 @@ int main(void) {
     FragTrap frag("Frag");
     ScavTrap scav("Scav");
     std::cout << frag << std::endl;
-
-    frag.takeDamage(99);
-    std::cout << frag << std::endl;
     std::cout << std::endl;
 
-    frag.takeDamage(10);
+    frag.takeDamage(110);
     std::cout << frag << std::endl;
     std::cout << std::endl;
-
 
     frag.beRepaired(50);
     std::cout << frag << std::endl;

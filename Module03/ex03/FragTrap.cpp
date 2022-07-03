@@ -1,11 +1,6 @@
 #include "FragTrap.hpp"
 
 FragTrap::FragTrap() {
-    this->setName("");
-    this->setHitPoints(100);
-    this->setEnergyPoints(100);
-    this->attackDamage = 30;
-    
     std::cout << "Default constructor FragTrap" << std::endl;
 }
 
@@ -25,11 +20,14 @@ FragTrap::~FragTrap() {
     std::cout << "Destructor FragTrap" << std::endl;
 }
 
-FragTrap::FragTrap (  std::string name ) : ClapTrap( name, 100, 100, 30) {
+FragTrap::FragTrap (  std::string name ) {
 
+    this->name= name;
+    this->hitPoints = 100;
+    this->energyPoints = 100;
+    this->attackDamage = 20;
     std::cout << "FragTrap Constructor" << std::endl;
 }
-
 
 void FragTrap::attack(const std::string & target) {
     std::cout << "FragTrap ";

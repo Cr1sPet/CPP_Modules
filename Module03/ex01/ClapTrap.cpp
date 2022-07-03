@@ -96,7 +96,7 @@ void ClapTrap::attack( const std::string & target) {
     bool active = isActive();
     bool alive = isAlive();
     if ( isActive() && isAlive() ) {
-        std::cout <<  name\
+        std::cout << "ClapTrap " << name\
                     << " attacks " << target\
                     << " causing " << attackDamage\
                     << " points of damage"\

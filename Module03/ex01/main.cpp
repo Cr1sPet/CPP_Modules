@@ -20,6 +20,9 @@ int main(void){
     std::cout << scav << std::endl;
     std::cout << std::endl;
 
+    clap.attack(scav.getName());
+    std::cout << std::endl;
+
     scav.attack(clap.getName());
     std::cout << scav << std::endl;
     std::cout << std::endl;

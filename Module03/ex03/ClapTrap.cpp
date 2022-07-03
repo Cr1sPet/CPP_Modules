@@ -1,7 +1,7 @@
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap() : name(""), hitPoints(10), energyPoints(10), attackDamage(0) {
-    std::cout << "ClapTrap's default constructor called" << std::endl;
+ClapTrap::ClapTrap() : hitPoints(10), energyPoints(10), attackDamage(0) {
+    std::cout << "CallTrap's default constructor called" << std::endl;
 }
 
 void ClapTrap::setName(std::string name) {
@@ -17,6 +17,7 @@ void ClapTrap::setHitPoints(unsigned int hitPoints) {
 }
 
 ClapTrap::ClapTrap( std::string name, unsigned int hitPoints, unsigned int energyPoints, unsigned int attackDamage ) {
+    std::cout << "ClapTrap's constructor called. " << std::endl;
     this->name = name;
     this->hitPoints = hitPoints;
     this->energyPoints = energyPoints;
@@ -95,7 +96,7 @@ void ClapTrap::attack( const std::string & target) {
     bool active = isActive();
     bool alive = isAlive();
     if ( isActive() && isAlive() ) {
-        std::cout <<  name\
+        std::cout << "ClapTrap " << name\
                     << " attacks " << target\
                     << " causing " << attackDamage\
                     << " points of damage"\
