@@ -6,7 +6,7 @@ DiamondTrap::DiamondTrap () {
 
 }
 
-DiamondTrap::DiamondTrap (  std::string name ) : ClapTrap(name) {
+DiamondTrap::DiamondTrap (  std::string name ) {
 
     this->name = name;
     ClapTrap::setName(this->name + "_clap_name");
