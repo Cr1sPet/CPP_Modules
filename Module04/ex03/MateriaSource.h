@@ -11,11 +11,18 @@
 class MateriaSource : public IMateriaSource {
 
 private:
+
     int index;
     AMateria materias*[4];
+    void fillNullMateria();
+
 public:
 
+    MateriaSource();
+    ~MateriaSource();
+
     void learnMateria(AMateria *);
+    AMateria* createMateria(std::string const & type);
 
 };
 

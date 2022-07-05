@@ -7,6 +7,9 @@
 
 #include <iostream>
 
+#include "ICharacter.h"
+
+class ICharacter;
 
 class AMateria {
 
@@ -17,10 +20,13 @@ protected:
 public:
 
     AMateria();
+    AMateria & operator = ( const AMateria & );
+    AMateria ( const AMateria & );
+    virtual ~AMateria();
 
     AMateria( std::string const & );
-
     std::string const & getType() const;
+
     virtual AMateria *clone() const = 0;
     virtual void use(ICharacter &target);
 

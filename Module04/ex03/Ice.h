@@ -12,8 +12,12 @@ class Ice : public AMateria {
 public:
 
     Ice();
+    Ice & operator = ( const Ice & );
+    Ice ( const Ice & );
     ~Ice();
-    AMateria * clone() const ;
+
+    virtual Ice * clone() const ;
+    void use(ICharacter &target);
 };
 
 

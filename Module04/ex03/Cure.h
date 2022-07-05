@@ -10,6 +10,16 @@
 
 class Cure : public AMateria {
 
+public:
+
+    Cure();
+    Cure & operator = ( const Cure & );
+    Cure ( const Cure & );
+    ~Cure();
+
+    virtual Cure * clone() const ;
+    void use(ICharacter &target);
+
 };
 
 

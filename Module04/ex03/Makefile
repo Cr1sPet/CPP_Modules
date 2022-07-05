@@ -2,12 +2,19 @@ NAME		=	poly
 
 SRCS		=	main.cpp\
 				AMateria.cpp\
-				Cure.cpp\
 				Ice.cpp\
+				Character.cpp\
+				Cure.cpp\
+				MateriaSource.cpp
 
 HEADER		=	AMateria.h\
-                Cure.h\
                 Ice.h\
+                ICharacter.h\
+                Character.h\
+                Cure.h\
+                MateriaSource.h\
+                IMateriaSource.h
+
 
 
 OBJ			=	$(SRCS:.cpp=.o)
