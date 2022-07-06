@@ -20,7 +20,7 @@ WrongCat & WrongCat::operator = (const WrongCat &cat) {
     return *this;
 }
 
-WrongCat::WrongCat ( const WrongCat & cat ) {
+WrongCat::WrongCat ( const WrongCat & cat ) : WrongAnimal() {
 
     *this = cat;
     std::cout << "Copy constructor WrongCat" << std::endl;

@@ -15,6 +15,8 @@ Dog & Dog::operator = (const Dog &dog) {
 
     if (this != &dog) {
         this->type = dog.type;
+        delete brain;
+        this->brain = new Brain( *dog.brain);
     }
 
     std::cout << "Assignment operator Dog" << std::endl;
@@ -22,7 +24,7 @@ Dog & Dog::operator = (const Dog &dog) {
     return *this;
 }
 
-Dog::Dog ( const Dog & dog ) {
+Dog::Dog ( const Dog & dog ) : Animal() {
 
     *this = dog;
     std::cout << "Copy constructor Dog" << std::endl;

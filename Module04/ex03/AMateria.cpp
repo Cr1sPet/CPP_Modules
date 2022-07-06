@@ -9,7 +9,7 @@
  */
 
 AMateria::AMateria() {
-    std::cout << "AMateria constructor" << std::endl;
+//    std::cout << "AMateria constructor" << std::endl;
 }
 
 AMateria & AMateria::operator = (const AMateria &aMateria) {
@@ -18,7 +18,7 @@ AMateria & AMateria::operator = (const AMateria &aMateria) {
         this->type = aMateria.type;
     }
 
-    std::cout << "Assignment operator AMateria" << std::endl;
+//    std::cout << "Assignment operator AMateria" << std::endl;
 
     return *this;
 }
@@ -26,12 +26,12 @@ AMateria & AMateria::operator = (const AMateria &aMateria) {
 AMateria::AMateria ( const AMateria & aMateria ) {
 
     *this = aMateria;
-    std::cout << "Copy constructor AMateria" << std::endl;
+//    std::cout << "Copy constructor AMateria" << std::endl;
 
 }
 
 AMateria::~AMateria() {
-    std::cout << "AMateria destructor" << std::endl;
+//    std::cout << "AMateria destructor" << std::endl;
 }
 
 

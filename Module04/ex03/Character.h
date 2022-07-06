@@ -29,9 +29,7 @@ public:
     Character ( const Character & );
     ~Character();
 
-    Character(std::string name) {
-        this->name = name;
-    }
+    Character(std::string name);
 
     void printMaterias();
 

@@ -19,6 +19,8 @@ int main (void) {
 
     WrongAnimal* k = new WrongCat();
 
+    WrongCat *wrongCat = new WrongCat();
+
     std::cout << "===================" << std::endl;
 
     std::cout << k->getType() << std::endl;
@@ -26,11 +28,15 @@ int main (void) {
     k->makeSound();
     wrongAnimal->makeSound();
 
+    wrongCat->makeSound();
 
 
-    delete (meta);
+    delete meta;
     delete j;
     delete i;
 
+    delete wrongCat;
+    delete k;
+    delete wrongAnimal;
     return 0;
 }

@@ -10,7 +10,7 @@ Dog::Dog() {
     this->type = "Dog";
 }
 
-Dog & Dog::operator = (const Dog &dog) {
+Dog & Dog::operator = (const Dog &dog){
 
     if (this != &dog) {
         this->type = dog.type;
@@ -21,7 +21,7 @@ Dog & Dog::operator = (const Dog &dog) {
     return *this;
 }
 
-Dog::Dog ( const Dog & dog ) {
+Dog::Dog ( const Dog & dog ) : Animal() {
 
     *this = dog;
     std::cout << "Copy constructor Dog" << std::endl;

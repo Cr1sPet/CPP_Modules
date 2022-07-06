@@ -20,7 +20,7 @@ WrongCat & WrongCat::operator = (const WrongCat &cat) {
     return *this;
 }
 
-WrongCat::WrongCat ( const WrongCat & cat ) {
+WrongCat::WrongCat ( const WrongCat & cat ) : WrongAnimal() {
 
     *this = cat;
     std::cout << "Copy constructor WrongCat" << std::endl;
@@ -32,5 +32,5 @@ WrongCat::~WrongCat() {
 }
 
 void WrongCat::makeSound() const {
-    std::cout << "WrongCat make Woof!" << std::endl;
+    std::cout << "WrongCat Meow!" << std::endl;
 }

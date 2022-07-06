@@ -13,7 +13,7 @@
 
 Cure::Cure() {
 
-    std::cout << "Cure constructor" << std::endl;
+//    std::cout << "Cure constructor" << std::endl;
     this->type = "cure";
 
 }
@@ -24,18 +24,18 @@ Cure & Cure::operator = ( const Cure & cure ) {
 
     }
 
-    std::cout << "Assignment operator Cure" << std::endl;
+//    std::cout << "Assignment operator Cure" << std::endl;
     return *this;
 }
 Cure::Cure ( const Cure & cure ) : AMateria(cure) {
 
-    std::cout << "Cure copy constructor" << std::endl;
+//    std::cout << "Cure copy constructor" << std::endl;
 
 }
 
 Cure::~Cure() {
 
-    std::cout << "Cure destructor" << std::endl;
+//    std::cout << "Cure destructor" << std::endl;
 
 }
 
@@ -45,7 +45,7 @@ Cure::~Cure() {
 
 Cure *Cure::clone() const {
 
-    std::cout << "Cure clone" << std::endl;
+//    std::cout << "Cure clone" << std::endl;
     return new Cure(*this);
 
 }

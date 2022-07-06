@@ -20,7 +20,7 @@ Cat & Cat::operator = (const Cat &cat) {
     return *this;
 }
 
-Cat::Cat ( const Cat & cat ) {
+Cat::Cat ( const Cat & cat ) : Animal() {
 
     *this = cat;
     std::cout << "Copy constructor Cat" << std::endl;

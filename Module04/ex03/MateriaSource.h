@@ -13,12 +13,14 @@ class MateriaSource : public IMateriaSource {
 private:
 
     int index;
-    AMateria materias*[4];
+    AMateria *materias[4];
     void fillNullMateria();
 
 public:
 
     MateriaSource();
+    MateriaSource ( const MateriaSource & );
+    MateriaSource & operator = ( const MateriaSource & );
     ~MateriaSource();
 
     void learnMateria(AMateria *);
