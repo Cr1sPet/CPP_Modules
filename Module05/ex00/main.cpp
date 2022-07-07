@@ -12,7 +12,6 @@ int main (void) {
         std::cout << "Failure : " << std::endl;
         std::cout << e.what();
     }
-    std::cout << std::endl;
     try {
         std::cout << "Test #2. Try to set too high grade (0)" << std::endl;
         Bureaucrat bureaucrat("Bob", 0);

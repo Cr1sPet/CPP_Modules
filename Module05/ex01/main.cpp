@@ -4,8 +4,11 @@
 int main (void) {
 
     try {
-        Form form("first", 100, 50);
-        Bureaucrat bureaucrat("Bob", 101);
+        int gradeBureaucrat = 101;
+        int gradeToSign = 100;
+        Form form("first", gradeToSign, 50);
+        Bureaucrat bureaucrat("Bob", gradeBureaucrat);
+
         bureaucrat.signForm(form);
 
         bureaucrat.incrementGrade(1);
@@ -15,14 +18,22 @@ int main (void) {
         std::cout << e.what();
     }
 
+    std::cout << std::endl;
+
     try {
-        Form form1("second", 151, 50);
+        int gradeToSign = 151;
+        std::cout << "Try to create form with gradeToSign == " << gradeToSign << std::endl;
+        Form form1("second", gradeToSign, 50);
     } catch (Form::GradeTooLowException & e) {
         std::cout << e.what() << std::endl;
     }
 
+    std::cout << std::endl;
+
     try {
-        Form form1("second", 12, 0);
+        int gradeToExecute = 0;
+        std::cout << "Try to create form with gradeToSign == " << gradeToExecute << std::endl;
+        Form form1("second", 12, gradeToExecute);
     } catch (std::exception & e) {
         std::cout << e.what() << std::endl;
     }

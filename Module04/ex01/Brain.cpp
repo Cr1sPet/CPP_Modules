@@ -5,6 +5,8 @@
 #include "Brain.hpp"
 
 Brain::Brain() {
+    std::srand(std::time(NULL));
+    setIdeas();
     std::cout << "Brain default constructor" << std::endl;
 }
 
@@ -30,4 +32,25 @@ Brain::Brain ( const Brain & brain ) {
 
 Brain::~Brain() {
     std::cout << "Brain destructor" << std::endl;
+}
+
+/*
+ * Logic
+ */
+
+
+void Brain::setIdeas() {
+    std::stringstream ss;
+
+    for (int i = 0; i < 100; i++) {
+        ss << std::rand() % 777;
+        ideas[i] = "idea" + ss.str();
+        ss.str("");
+    }
+}
+
+std::string Brain::generateIdea() {
+
+    return this->ideas[std::rand() % 100];
+
 }

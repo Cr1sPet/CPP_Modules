@@ -86,6 +86,8 @@ void Bureaucrat::incrementGrade(int value) {
     if (this->grade < 1) {
         throw GradeTooHighException();
     }
+    std::cout << this->name << " successfully incremented grade by " << value << std::endl;
+
 }
 
 void Bureaucrat::decrementGrade(int value) {
@@ -97,6 +99,10 @@ void Bureaucrat::decrementGrade(int value) {
 
 void Bureaucrat::signForm( Form & form ) {
     try {
+
+        std::cout << "Bureaucrat " << this->name <<" with grade == " << this->grade\
+                << " try to sign form with gradeToSign == " << form.getGradeToSign() << std::endl;
+
         form.beSigned(*this);
         std::cout << "Bureaucrat " << this->name\
                     << " signed form " << form.getName()\

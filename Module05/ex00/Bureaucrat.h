@@ -31,10 +31,11 @@ public:
 
     void setGrade( int grade );
 
-class GradeTooHighException : public std::exception{
+    class GradeTooHighException : public std::exception{
     public:
         const char * what () const throw();
     };
+
     class GradeTooLowException : public std::exception {
     public:
         const char * what () const throw();
