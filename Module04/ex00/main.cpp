@@ -15,10 +15,11 @@ int main (void) {
     meta->makeSound();
 
 
-    WrongAnimal* wrongAnimal = new WrongAnimal();
+    j = i;
+
 
     WrongAnimal* k = new WrongCat();
-
+    WrongAnimal* wrongAnimal = new WrongAnimal();
     WrongCat *wrongCat = new WrongCat();
 
     std::cout << "===================" << std::endl;

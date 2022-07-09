@@ -1,20 +1,11 @@
-NAME		=	convert
+NAME		=	serialization
 
 SRCS		=	main.cpp\
-				Converter.cpp\
-				MyDouble.cpp\
-				MyInteger.cpp\
-				MyChar.cpp\
-				MyFloat.cpp\
-				AMyType.cpp
+				SerializationUtils.cpp
 
+HEADER		=	./SerializationUtils.h\
+				./Data.h
 
-HEADER		=	Converter.h\
-				MyDouble.h\
-				MyInteger.h\
-				MyChar.h\
-				MyFloat.h\
-				AMyType.h
 
 
 OBJ			=	$(SRCS:.cpp=.o)

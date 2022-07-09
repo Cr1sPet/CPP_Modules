@@ -1,20 +1,15 @@
-NAME		=	convert
+NAME		=	instanceof
 
 SRCS		=	main.cpp\
-				Converter.cpp\
-				MyDouble.cpp\
-				MyInteger.cpp\
-				MyChar.cpp\
-				MyFloat.cpp\
-				AMyType.cpp
 
 
-HEADER		=	Converter.h\
-				MyDouble.h\
-				MyInteger.h\
-				MyChar.h\
-				MyFloat.h\
-				AMyType.h
+HEADER		=	./Base.h\
+				./A.h\
+				./B.h\
+				./C.h\
+
+
+
 
 
 OBJ			=	$(SRCS:.cpp=.o)

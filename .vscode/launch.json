@@ -8,7 +8,7 @@
 			"type": "lldb",
 			"request": "launch",
 			"name": "Debug",
-			"program": "/home/serj/projects/CPP_introduction/Module01/ex03/zombies",
+			"program": "Module04/ex03/poly",
 			"args": [""],
 			"cwd": "${workspaceFolder}"
 		}
