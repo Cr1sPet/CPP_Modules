@@ -8,8 +8,13 @@
 #include <vector>
 #include <iterator>
 #include <exception>
+#include <algorithm>
+#include <iostream>
+#include <time.h>
+#include <stdlib.h>
 
 typedef std::vector<int> VI;
+typedef VI::iterator VII;
 
 
 class Span {
@@ -18,7 +23,7 @@ private:
 
     unsigned int n;
     VI v;
-
+    VI generateRandomVector(unsigned int from, unsigned int to, unsigned count);
 
 public:
 
@@ -30,10 +35,12 @@ public:
     Span(unsigned int n);
     unsigned int getN() const ;
     void addNumber(unsigned int number);
+    void addNumbersRange(unsigned int from, unsigned int to, int count);
 
     unsigned int shortestSpan();
     unsigned int longestSpan();
 
+    void print();
 
 };
 

@@ -1,10 +1,10 @@
-NAME		=	span
+NAME		=	mutantStack
 
 SRCS		=	main.cpp\
-				Span.cpp
 
 
-HEADER		=	./Span.h
+
+HEADER		=	./MutantStack.h
 
 OBJ			=	$(SRCS:.cpp=.o)
 
