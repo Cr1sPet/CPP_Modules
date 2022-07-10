@@ -1,4 +1,4 @@
-NAME		=	convert
+NAME		=	template
 
 SRCS		=	main.cpp\
 				Cat.cpp

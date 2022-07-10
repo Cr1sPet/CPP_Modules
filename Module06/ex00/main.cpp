@@ -14,11 +14,6 @@ int main (int argc, char **argv) {
 
     Converter converter(input);
     converter.print();
-
-    Converter converter1("df");
-
-    converter = converter1;
-
     return 0;
 }
 

@@ -61,25 +61,31 @@ MyDouble *MyDouble::clone() const {
  * Logic
  */
 
-void MyDouble::parseString( std::string input) {
-    double doubleValue;
+bool MyDouble::checkSpecial (std::string input) {
+
     std::string temp;
 
     std::stringstream converter( "+inf -inf nan");
-
     while (!converter.eof()) {
         converter >> temp;
         if (0 == temp.compare(input)) {
             this->stringRepresentation = temp;
-            return;
+            return true;
         }
     }
+    return false;
+}
 
-    converter.str("");
-    converter.clear();
+void MyDouble::parseString( std::string input) {
+    double doubleValue;
 
-    converter << input;
+    if (MyDouble::checkSpecial(input)) {
+        return ;
+    };
+
+    std::stringstream converter(input);
     converter >> doubleValue;
+
 
     if ( converter.fail() || !converter.eof()) {
         throw StringParseFailureException();

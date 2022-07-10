@@ -50,6 +50,9 @@ public:
     void printChar();
     void printFloat();
 
+    bool checkSpecial(std::string);
+
+
     virtual MyFloat * clone() const ;
 
 

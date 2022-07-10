@@ -3,7 +3,6 @@
 //
 
 #include "Array.h"
-#include "Array.tpp"
 #include <iostream>
 #include "Cat.hpp"
 
@@ -19,24 +18,33 @@ void printArray( T array, int length ) {
 int main () {
 
     try {
+        Array<std::string> array(0);
+        std::cout << "Array size : " << array.size() << std::endl;
+
+        Array<std::string> array1(-10);
+
+    } catch (std::exception &e) {
+        std::cout << e.what() << std::endl;
+    }
+
+    try {
+
+        Array<int> array(10);
+        array[10] = 3;
+
+    } catch (std::exception &e) {
+        std::cout << e.what() << std::endl;
+    }
+
+
+    try {
         Array<int> array(5);
-        Array<int> array1(10);
 
         for (int i = 0; i < 5; i++) {
             array[i] = i + 10;
         }
 
         printArray(array, 5);
-
-        for (int i = 0; i < 10; i++) {
-            array1[i] = i + 1000;
-        }
-
-        printArray(array1, 10);
-
-        array = array1;
-
-        printArray(array, 10);
 
     } catch (std::exception &e) {
         std::cout << e.what() << std::endl;

@@ -27,7 +27,7 @@ public:
     Array( int value) {
 
         if (value < 0) {
-            throw std::out_of_range( " Cannot create array : Index is out of range" );
+            throw std::out_of_range( "Cannot create array : Index is out of range" );
         } else if ( value == 0) {
             this->arr = NULL;
             length = 0;
@@ -39,8 +39,6 @@ public:
 
 
     Array & operator = (const Array &array) {
-
-        std::cout << "operator assignment " <<std::endl;
 
         if (this != &array) {
             delete []arr;
@@ -59,9 +57,6 @@ public:
     }
 
     Array ( const Array & array ){
-
-        std::cout << "copy ctor " <<std::endl;
-
 
         this->arr = new T[array.size()];
 

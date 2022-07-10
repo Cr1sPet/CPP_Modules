@@ -23,8 +23,11 @@ int main () {
 
 
     int intArray[5] = {103, -24, 566, 34, 65};
-    iter(intArray, 3, &print);
+    iter(intArray, 5, &print);
     std::cout << "####################" << std::endl;
+
+    iter(intArray, size, &printName);
+
 
     iter(cats, size, &print);
 

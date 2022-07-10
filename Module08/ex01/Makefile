@@ -1,12 +1,10 @@
 NAME	=	iter
 
 SRCS		=	main.cpp\
-				Zombie.cpp\
-				Cat.cpp
+				Span.cpp
 
-HEADER		=	./Zombie.hpp\
-				./Cat.hpp\
-				./Iter.h
+
+HEADER		=	./Span.h
 
 OBJ			=	$(SRCS:.cpp=.o)
 

@@ -8,6 +8,7 @@
 #include <iostream>
 #include <sstream>
 #include <stdlib.h>
+#include <exception>
 
 
 
@@ -26,9 +27,8 @@ template <typename T>
 T* createArray( const int &N, std::string name) {
     std::stringstream ss;
 
-    if (N < 0) {
-        std::cout << "N can not be negative" << std::endl;
-        exit(1);
+    if (N <= 0) {
+        throw std::out_of_range("bad size");
     }
 
     T* array = new T[N];

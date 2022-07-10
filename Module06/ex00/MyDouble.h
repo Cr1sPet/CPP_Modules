@@ -47,6 +47,8 @@ public:
     void printChar();
     void printFloat();
 
+    bool checkSpecial(std::string);
+
     virtual MyDouble * clone() const ;
 
 

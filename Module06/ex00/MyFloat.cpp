@@ -61,31 +61,42 @@ MyFloat *MyFloat::clone() const {
  * Logic
  */
 
-void MyFloat::parseString( std::string input) {
+
+bool MyFloat::checkSpecial (std::string input) {
+
     std::string temp;
 
     std::stringstream converter( "+inff -inff nanf");
-
     while (!converter.eof()) {
         converter >> temp;
         if (0 == temp.compare(input)) {
             this->stringRepresentation = temp;
-            return;
+            return true;
         }
     }
+    return false;
+}
 
-    converter.str("");
-    converter.clear();
+void MyFloat::parseString( std::string input) {
 
     float floatValue;
 
-    converter << input;
-    converter >> floatValue;
+    if (MyFloat::checkSpecial(input)) {
+        return ;
+    };
 
-    if ( converter.fail() || input[input.length() - 1 ] != 'f' || input.find_first_of('f') != input.find_last_of('f')) {
+    if (input[input.length() - 1 ] != 'f' || input.find_first_of('f') != input.find_last_of('f')) {
         throw AMyType::StringParseFailureException();
     }
-    std::cout << "Float Value " << floatValue << std::endl;
+
+
+    std::stringstream  converter(input.substr(0, input.length() - 1));
+    converter >> floatValue;
+
+    if ( converter.fail()) {
+
+        throw AMyType::StringParseFailureException();
+    }
     this->value = floatValue;
 }
 
@@ -122,7 +133,7 @@ void MyFloat::printInteger() {
 MyDouble MyFloat::toDouble() {
 
     if (!this->stringRepresentation.empty()) {
-        return MyDouble(this->stringRepresentation.substr(0, stringRepresentation.length() - 2));
+        return MyDouble(this->stringRepresentation.substr(0, stringRepresentation.length() - 1));
     }
 
     return MyDouble(static_cast<float>(this->value));

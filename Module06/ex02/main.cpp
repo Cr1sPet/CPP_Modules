@@ -13,7 +13,6 @@
 
 Base *generate( void ) {
     int result = rand() % 3;
-    srand(time(NULL));
     std::cout << "[generate] ";
     switch (result) {
         case 0:
@@ -77,8 +76,8 @@ void identify (Base &p) {
 
 int main() {
 
+    srand(time(NULL));
     Base **bases = new Base*[5];
-
     for (int i = 0; i < 5; i++) {
         bases[i] = generate();
         identify(bases[i]);

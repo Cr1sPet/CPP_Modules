@@ -90,7 +90,6 @@ Converter & Converter::operator = (const Converter &converter) {
 
 Converter::Converter ( const Converter & converter ){
 
-    this->pure = pure;
 
     myType = new AMyType*[4];
 
@@ -123,6 +122,6 @@ void Converter::print() {
 
     mainType->printChar();
     mainType->printInteger();
-    mainType->printDouble();
     mainType->printFloat();
+    mainType->printDouble();
 }
